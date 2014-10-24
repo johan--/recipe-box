@@ -1,13 +1,22 @@
+<div="add-recipe"> 
+<br /> <br />
+<form ng-submit="newRecipe" novalidate>
+	Recipe title: <input type="text" ng-model="newRecipe.title">
+	Ingredients: <input type="text" ng-model="newRecipe.ingredients">
+	Directions: <input type="text" ng-model="newRecipe.directions">
+	
+	
+</form>
 
-<div class="add" ng-controller="addRecipectrl">
-<!-- <form name="add"> -->
-  <input type="text" ng-model="myModelObj">
-  <input type="file" ng-file-select="onFileSelect($files)">
-  <input type="file" ng-file-select="onFileSelect($files)" multiple accept="image/*">
-  <div class="button" ng-file-select="onFileSelect($files)" data-multiple="true"></div>
-  <div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class-name-or-function"
-        ng-show="dropSupported">drop files here</div>
-  <div ng-file-drop-available="dropSupported=true" 
-        ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
-  <button ng-click="upload.abort()">Cancel Upload</button>
+<form ng-submit="upload()" method="post" enctype="multipart/form-data" novalidate>
+
+	<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
+
+	<input type="file" ng-file-select="onFileSelect($files)">
+	<!-- <input type="file" accept="image/*"> -->
+	<br />
+	<button ng-click="upload.abort()">Cancel upload</button>
+
+	<button type="submit" ng-disabled="form.$invalid || isUnchanged(user)">Add recipe</button>
+</form>
 </div>

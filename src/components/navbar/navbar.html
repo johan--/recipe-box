@@ -1,13 +1,19 @@
-<nav class="navbar" ng-controller="NavbarCtrl">
- 
-  
-    <ul class="nav navbar-nav">
-      <li class="active"><a ng-href="#">What's cooking</a></li>
-      <li><a ng-href="#">Your recipes</a></li>
-      <li><a ng-href="#">Sign out</a></li>
-
-     </ul>
-
-     
-  </div>
+<nav class="collapse navbar-collapse" ng-controller="NavbarCtrl"> 
+	<ul class="nav navbar-nav">
+	  <!-- <li>
+	  	<a ng-href="#">What's cooking</a>
+	  </li> -->
+	  <li>
+	  	<a ng-href="/proxy?url=your-recipes">Your recipes</a>
+	  </li>
+		<li>
+			<a ng-href="/proxy?url=new">Add recipe</a>
+		</li>
+		<li ng-show="!user">
+	  	<a ng-href="//proxy?url=login">Sign in</a>
+	  </li>
+	  <li ng-show="user" ng-controller="AuthCtrl">
+	  	<a href="#" ng-click="signOut()">Sign out</a>
+	  </li>
+	 </ul>
 </nav>
