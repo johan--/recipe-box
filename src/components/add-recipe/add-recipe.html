@@ -1,22 +1,23 @@
-<div="add-recipe"> 
-<br /> <br />
-<form ng-submit="newRecipe" novalidate>
-	Recipe title: <input type="text" ng-model="newRecipe.title">
-	Ingredients: <input type="text" ng-model="newRecipe.ingredients">
-	Directions: <input type="text" ng-model="newRecipe.directions">
+
+	<h3>Add a recipe</h3> 
+<form ng-submit="addRecipe(newRecipe)" name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" >
+
+<div class="form-group">
+
+<!-- 	<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
+ -->	
+	<label for="title">Recipe title:</label>
+	<input type="text" id="title" class="form-control" ng-model="newRecipe.title">
+	 
+	<label for="ingredients">Ingredients:</label> <input type="text" id="title" class="form-control" ng-model="newRecipe.ingredients"><br />
+
+	<label for="directions">Directions:</label>
+	<input type="text" id="directions" class="form-control"ng-model="newRecipe.directions">
 	
-	
-</form>
-
-<form ng-submit="upload()" method="post" enctype="multipart/form-data" novalidate>
-
-	<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
-
-	<input type="file" ng-file-select="onFileSelect($files)">
-	<!-- <input type="file" accept="image/*"> -->
+<!-- 	<label for="pic">Select a photo:</label>
+	<input class="pic" type="file" ng-file-select="onFileSelect($files)" accept="image/*"> -->
 	<br />
-	<button ng-click="upload.abort()">Cancel upload</button>
 
-	<button type="submit" ng-disabled="form.$invalid || isUnchanged(user)">Add recipe</button>
+	<button type="submit" ng-disabled="form.$invalid || isUnchanged(newRecipe)">Add recipe</button>
 </form>
 </div>

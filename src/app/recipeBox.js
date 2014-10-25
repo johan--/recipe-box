@@ -7,7 +7,7 @@ function($routeProvider){
 	$routeProvider.
 	when('/', {
 		templateUrl: 'components/add-recipe/add-recipe.html',
-		controller: 'uploadPic'
+		controller: 'addRecipeCtrl'
 	}).
 	when('/new', {
 	}).
@@ -21,4 +21,11 @@ function($routeProvider){
 	otherwise({
 		redirectTo: '/'
 	});
-}]);
+}])
+	.controller('initialize',function($rootScope){
+
+		if (localStorage.getItem('uid')){
+			$rootScope.uid = localStorage.getItem('uid');
+		}
+
+	});

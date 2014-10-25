@@ -38,6 +38,8 @@ app.use(express.static(__dirname + '/src'));
 // app.get('/', function(req, res) {
 // 	res.render('index');
 // });
+
+console.log('running on *:3000');
  
 app.get('/proxy', function(req, res) {
 	var url = "http://" + req.query.url;

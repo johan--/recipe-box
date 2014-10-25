@@ -1,10 +1,12 @@
-<div class="login">
-<form name="auth" ng-controller="AuthCtrl">
-  <input type="email" ng-model="email">
-  <input type="password" ng-model="password">
+<form class="form-inline" name="auth" ng-controller="AuthCtrl">
+<div class="form-group" id="login">
+
+  <input type="email" placeholder="Email address" class="form-control"ng-model="email" ng-hide="user">
+  <input type="password" placeholder="Password" class="form-control" ng-model="password" ng-hide="user">
   <span ng-model='email'></span>
-  <a href ng-click="signIn()">Sign In</a>
-  <a href ng-click="signUp()">Sign Up</a>
-  <a ng-click="signOut()">Sign out</a>
-</form>
+  <a href ng-click="signIn()" ng-hide="user">Sign In</a>
+  <a href ng-click="signUp()" ng-hide="user">Sign Up</a>
+<!-- <a ng-click="signOut()" ng-show="user" >Sign out</a>
+ --></form>
 </div>
+  

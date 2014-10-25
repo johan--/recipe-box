@@ -15,10 +15,18 @@
 
 h1 {
 	font-family: 'Cookie', cursive;
-	font-size: 90px;
+	font-size: 100px;
 	color: #99B898;
-  padding: 5px;
+  text-align: center;
 }
+
+.logo-wrapper {
+  margin: 0 auto;
+  margin-top: -10px;
+  border-bottom: 5px solid #C7956D;
+   }
+
+
 
 body {
   font-family: Quicksand, sans-serif;
@@ -31,14 +39,12 @@ li {
 }
 
 .login {
-  float: right;
+  float: left;
   padding: 15px;
 }
 
 .recipe-holder {
-  // border: 1px solid #C7956D;
-  // background: #C7956D;
- 
+  
   padding: 5px;
   margin-bottom: 5px;
 }

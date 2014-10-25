@@ -1,17 +1,17 @@
 <nav class="collapse navbar-collapse" ng-controller="NavbarCtrl"> 
-	<ul class="nav navbar-nav">
+	<ul class="nav navbar-nav navbar-right">
 	  <!-- <li>
 	  	<a ng-href="#">What's cooking</a>
 	  </li> -->
 	  <li>
-	  	<a ng-href="/proxy?url=your-recipes">Your recipes</a>
+	  	<a ng-href="/your-recipes/">Your recipes</a>
 	  </li>
 		<li>
 			<a ng-href="/proxy?url=new">Add recipe</a>
 		</li>
-		<li ng-show="!user">
-	  	<a ng-href="//proxy?url=login">Sign in</a>
-	  </li>
+		<!-- <li ng-show="!user">
+	  	<a ng-href="/proxy?url=login">Sign in</a>
+	  </li> -->
 	  <li ng-show="user" ng-controller="AuthCtrl">
 	  	<a href="#" ng-click="signOut()">Sign out</a>
 	  </li>
