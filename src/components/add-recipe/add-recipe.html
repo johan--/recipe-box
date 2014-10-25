@@ -1,6 +1,10 @@
 
-	<h3>Add a recipe</h3> 
-<form ng-submit="addRecipe(newRecipe)" name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" >
+<h3>Add a recipe</h3> 
+<!-- <form ng-submit="addRecipe(newRecipe)" name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" > -->
+
+
+<form name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" ng-submit="upload(); addRecipe(newRecipe)" method="post" enctype="multipart/form-data" novalidate>
+
 
 <div class="form-group">
 
@@ -14,8 +18,8 @@
 	<label for="directions">Directions:</label>
 	<input type="text" id="directions" class="form-control"ng-model="newRecipe.directions">
 	
-<!-- 	<label for="pic">Select a photo:</label>
-	<input class="pic" type="file" ng-file-select="onFileSelect($files)" accept="image/*"> -->
+	<label for="pic">Select a photo:</label>
+	<input class="pic" type="file" ng-file-select="onFileSelect($files)" accept="image/*">
 	<br />
 
 	<button type="submit" ng-disabled="form.$invalid || isUnchanged(newRecipe)">Add recipe</button>
