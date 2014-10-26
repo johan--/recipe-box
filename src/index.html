@@ -30,6 +30,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="logo-wrapper"><h1>Recipe Box</h1></div>
+
       </div>
 
       <div class="row">
@@ -46,7 +47,10 @@
 
     <hr>
     <div class="footer">
-      <p> :) </p>
+            <div ng-include="'components/your-recipes/your-recipes.html'"></div>
+
+       
+
     </div>
 </div>
 
@@ -76,19 +80,18 @@
     <!-- build:js({src,.tmp}) scripts/main.js -->
     <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700|Cookie' rel='stylesheet' type='text/css'>
     <script src="app/recipeBox.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="components/login/login.controller.js"></script>
     <script src="components/navbar/navbar.controller.js"></script>
     <script src="components/add-recipe/add-recipe.controller.js"></script>
     <script src="components/your-recipes/your-recipes.js"></script>
 
-    <script src="/bower_components/angular-route/angular-route.js"></script>
 
     <script src="/bower_components/aws-sdk-js/dist/aws-sdk.js"></script> 
 
 
     <!-- inject:partials -->
-        <link href="components/your-recipes/your-recipes.html"> 
 
     <!-- angular templates will be automaticaly converted in js and inserted here -->
     <!-- endinject -->

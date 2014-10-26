@@ -13,17 +13,37 @@
   }
 }
 
+// h1 {
+// 	font-family: 'Cookie', cursive;
+// 	font-size: 100px;
+// 	color: #99B898;
+//   text-align: center;
+// }
+
+ 
+
 h1 {
-	font-family: 'Cookie', cursive;
-	font-size: 100px;
-	color: #99B898;
+  padding-top: 25px;
+  font-family: 'Cookie', cursive;
+  font-size: 90px;
   text-align: center;
+   // -webkit-text-stroke: 5px #C7956D;
+   color: #99B898;
+   text-shadow:
+       2px 2px 0 white,
+     -1px -1px 0 white,  
+      1px -1px 0 white,
+      -1px 1px 0 white,
+       1px 1px 0 white;
 }
 
 .logo-wrapper {
   margin: 0 auto;
   margin-top: -10px;
-  border-bottom: 5px solid #C7956D;
+  background-color: #C7956D;
+  border-bottom: 3px solid white;
+  width: 400px;
+  margin-top: -25px;
    }
 
 

@@ -1,14 +1,18 @@
 'use strict'
 
 angular.module('recipeBox')
-.controller('yourRecipesCtrl', ['$scope', '$rootScope', 'firebase', function($scope, $rootScope, $firebase) {
+.controller('yourRecipesCtrl', ['$scope', '$rootScope', '$firebase', function($scope, $rootScope, $firebase) {
 
-	var userFBURL = 'https://glowing-inferno-7484.firebaseIO.com/' + $rootScope.uid + "/recipes"; 
- 
-  var ref = new Firebase(userFBURL);
+	var uid = localStorage.getItem('uid');
+debugger;
+
+var viewFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + uid + '/recipes/'; 
+
+  var ref = new Firebase(viewFBURL);
   var sync = $firebase(ref);
-  var recipesObj = sync.$asObject();
-  $scope.recipes = recipesObj
+  var recipesArr = sync.$asArray();
+  $scope.recipes = recipesArr;
 
 
 }]);
+

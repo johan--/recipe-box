@@ -6,7 +6,6 @@
 recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin',  function($scope, $rootScope,$firebase, $firebaseSimpleLogin) {
 
 ////Firebase stuff ////
-
 $rootScope.uid = localStorage.getItem('uid');
 
 var userFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/recipes/'; 
@@ -17,15 +16,13 @@ $scope.fb_deets = sync.$asArray();
 
 
 $scope.addRecipe = function(submission) {
- $scope.fb_deets.$add({title: submission.title, ingredients: submission.ingredients, directions: submission.directions});
+ $scope.fb_deets.$add({title: submission.title, ingredients: submission.ingredients, directions: submission.directions, image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + $scope.file.name});
 }
         
 
 ////S3 stuff/////
 
-$scope.creds = {
-  
-};
+
 
 $scope.onFileSelect = function($files) {
   $scope.file = $files[0];

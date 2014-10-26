@@ -2,17 +2,18 @@
 
 var recipeBox = angular.module('recipeBox', ['firebase', 'ngRoute', 'angularFileUpload']);
 
-recipeBox.config(['$routeProvider',
-function($routeProvider){
+recipeBox.config(['$routeProvider', function($routeProvider){
+ 
+
 	$routeProvider.
 	when('/', {
-		templateUrl: 'components/add-recipe/add-recipe.html',
+		templateUrl: './components/add-recipe/add-recipe.html',
 		controller: 'addRecipeCtrl'
 	}).
 	when('/new', {
 	}).
 	when('/your-recipes', {
-		templateUrl: 'components/your-recipes/your-recipes.html',
+		templateUrl: './components/your-recipes/your-recipes.html',
 		controller: 'yourRecipesCtrl'
 	}).
 	when('/login', {
@@ -24,8 +25,8 @@ function($routeProvider){
 }])
 	.controller('initialize',function($rootScope){
 
-		if (localStorage.getItem('uid')){
+		
 			$rootScope.uid = localStorage.getItem('uid');
-		}
+		console.log($rootScope.uid);
 
 	});

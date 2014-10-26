@@ -1,10 +1,12 @@
 <div ng-controller="yourRecipesCtrl">
-	<p>hi :)</p>
 	<div class="row">
 		<div class="recipe_holder" ng-repeat="recipe in recipes">
 			<div class="col-lg-4">
 				<img class="image-responsive-rounded" src="{{recipe.image}}" style="width: 350px; height: 350px;">
 				<h3>{{recipe.title}}</h3>
+				<p> {{recipe.ingredients}}</p>
+				<p>{{recipe.directions}}
+
 			</div>
 		</div>
 	</div>

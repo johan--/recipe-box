@@ -20,6 +20,8 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
       password: $scope.password
     }).then(function(user) {
       console.log('user', user);
+              localStorage.setItem('uid', user.uid);
+
     }, function(error) {
       console.log('error', error);
     });
@@ -33,7 +35,6 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
       console.log('user', user);
       $scope.signIn();
       ref2.child(user.uid).set('recipes');
-      localStorage.setItem('uid', user.uid);
     }, function(error) {
       console.log('error', error);
     });
@@ -54,6 +55,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
 
     user.$loaded().then(function() {
       $rootScope.user = user;
+
     });
   });
 
