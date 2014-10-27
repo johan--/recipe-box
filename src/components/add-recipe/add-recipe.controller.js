@@ -18,7 +18,6 @@ $scope.fb_deets = sync.$asArray();
 $scope.addRecipe = function(submission) {
  $scope.fb_deets.$add({title: submission.title, ingredients: submission.ingredients, directions: submission.directions, image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + $scope.file.name});
 }
-        
 
 ////S3 stuff/////
 
@@ -41,6 +40,7 @@ $scope.upload = function() {
       Key: $scope.file.name,
       ContentType: $scope.file.type,
       Body: $scope.file,
+      ACL: 'public-read',
       ServerSideEncryption: 'AES256' };
 
       bucket.putObject(params, function(err, data) {

@@ -2,8 +2,7 @@
 
 angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, $firebase, $firebaseSimpleLogin) {
 
-  // var loggedIn = $firebaseSimpleLogin.$getCurrentUser() 
-
+ 
    
 
   var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/users/';

@@ -1,27 +1,47 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="form-container">
+		<div class="col-sm-9 col-sm-offset-3">
+			<h2>Add a recipe</h2> 
+			</div>
+			
+				<form name="newRecipe" ng-controller="addRecipeCtrl" role="form" class="form-horizontal" ng-submit="upload(); addRecipe(newRecipe)" method="post" enctype="multipart/form-data" novalidate>
 
-<h3>Add a recipe</h3> 
-<!-- <form ng-submit="addRecipe(newRecipe)" name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" > -->
 
+					
+<div class="form-group">
+				<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
 
-<form name="newRecipe" ng-controller="addRecipeCtrl" class="form-horizontal" ng-submit="upload(); addRecipe(newRecipe)" method="post" enctype="multipart/form-data" novalidate>
-
+				<label for="title" class="col-sm-3 control-label">Title:</label>
+				<div class="col-sm-9">
+					<input type="text" id="title" class="form-control" ng-model="newRecipe.title">
+				</div>
+				</div>
 
 <div class="form-group">
-
-	<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
-	
-	<label for="title">Recipe title:</label>
-	<input type="text" id="title" class="form-control" ng-model="newRecipe.title">
-	 
-	<label for="ingredients">Ingredients:</label> <input type="text" id="title" class="form-control" ng-model="newRecipe.ingredients"><br />
-
-	<label for="directions">Directions:</label>
-	<input type="text" id="directions" class="form-control"ng-model="newRecipe.directions">
-	
-	<label for="pic">Select a photo:</label>
-	<input class="pic" type="file" ng-file-select="onFileSelect($files)" accept="image/*">
-	<br />
-
-	<button type="submit" ng-disabled="form.$invalid || isUnchanged(newRecipe)">Add recipe</button>
-</form>
+				<label for="ingredients" class="col-sm-3 control-label">Ingredients:</label> 
+				<div class="col-sm-9">
+				<textarea id="title" class="form-control" ng-model="newRecipe.ingredients"></textarea> 
+				</div>
+				</div>
+<div class="form-group">
+				<label for="directions" class="col-sm-3 control-label">Directions:</label>
+				<div class="col-sm-9">
+				<textarea id="directions" class="form-control" rows="3" ng-model="newRecipe.directions"></textarea>
+				</div>
+				</div>
+<div class="form-group">
+				<label for="pic" class="col-sm-3 control-label">Photo:</label>
+				<div class="col-sm-9">
+				<input class="form-control" id="pic" type="file" ng-file-select="onFileSelect($files)" accept="image/*">
+				</div>
+				</div>
+				 
+				<div class="col-sm-offset-6 col-sm-9">
+				<button type="submit" ng-disabled="form.$invalid || isUnchanged(newRecipe)">Add recipe</button>
+				</div>
+		</form>
+	</div>
+		</div>
+	</div>
 </div>
