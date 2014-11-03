@@ -7,13 +7,23 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 
 	$routeProvider.
 	when('/', {
+		templateUrl: './index.html',
+		controller: 'MainCtrl',
+		resolve: {
+      // controller will not be loaded until $getCurrentUser resolves
+      // simpleLogin refers to our $firebaseSimpleLogin wrapper in the example above
+      'currentUser': ['simpleLogin', function(simpleLogin) {
+        // $getCurrentUser returns a promise so the resolve waits for it to complete
+        return simpleLogin.$getCurrentUser();
+      }]
+  }
+	}).
+	when('/new', {
 		templateUrl: './components/add-recipe/add-recipe.html',
 		controller: 'addRecipeCtrl'
 	}).
-	when('/new', {
-	}).
 	when('/your-recipes', {
-		templateUrl: './components/your-recipes/your-recipes.html',
+		templateUrl: 'components/your-recipes/your-recipes.html',
 		controller: 'yourRecipesCtrl'
 	}).
 	when('/login', {
@@ -30,3 +40,5 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 		console.log($rootScope.uid);
 
 	});
+
+

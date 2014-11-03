@@ -39,7 +39,12 @@ app.use(express.static(__dirname + '/src'));
 // 	res.render('index');
 // });
 
-console.log('running on *:3000');
+var amazon_bucket = process.env.AMAZON_BUCKET;
+var amazon_access_key = process.env.AMAZON_ACCESS_KEY;
+var amazon_secret_key = process.env.AMAZON_SECRET_KEY;
+console.log(amazon_access_key, amazon_secret_key, amazon_bucket);
+
+console.log('Hi, Alex! The server is running on *:3000');
  
 app.get('/proxy', function(req, res) {
 	var url = "http://" + req.query.url;

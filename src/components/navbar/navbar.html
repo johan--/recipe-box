@@ -4,16 +4,17 @@
 	  	<a ng-href="#">What's cooking</a>
 	  </li> -->
 	  <li>
-	  	<a ng-href="/your-recipes/">Your recipes</a>
+	  	<!-- <a ng-href="/your-recipes/"><h4>Your recipes</h4></a> -->
+	  	<a ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a>
 	  </li>
 		<li>
-			<a ng-href="/proxy?url=new">Add recipe</a>
+			<a ng-click="goRecipe('new')"><h4>Add recipe</h4></a>
 		</li>
 		<!-- <li ng-show="!user">
 	  	<a ng-href="/proxy?url=login">Sign in</a>
 	  </li> -->
 	  <li ng-show="user" ng-controller="AuthCtrl">
-	  	<a href="#" ng-click="signOut()">Sign out</a>
+	  	<a href="#" ng-click="signOut()"><h4>Sign out</h4></a>
 	  </li>
 	 </ul>
 </nav>

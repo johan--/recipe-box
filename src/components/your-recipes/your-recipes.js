@@ -42,6 +42,7 @@ recipeBox.service('SplitArrayService', function () {
 				rowsArray[i] = columnsArray;
 			}
 			return rowsArray;
+			console.log(rowsArray);
 		}
 
 }

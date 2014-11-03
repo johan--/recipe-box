@@ -13,13 +13,12 @@
   }
 }
 
-// h1 {
-// 	font-family: 'Cookie', cursive;
-// 	font-size: 100px;
-// 	color: #99B898;
-//   text-align: center;
-// }
-
+.nav {
+  background-color: #99B898;
+  h4 { 
+  color: white;
+  }
+}
  
 
 h1 {
@@ -39,11 +38,10 @@ h1 {
 
 .logo-wrapper {
   margin: 0 auto;
-  margin-top: -10px;
+  margin-top: -20px;
   background-color: rgba(199, 149, 109, 0.7);
-  border-bottom: 3px solid white;
   width: 400px;
-  margin-top: -25px;
+  padding: 5px;
   border-bottom-left-radius: 15px;
 
    }

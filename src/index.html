@@ -26,32 +26,28 @@
   <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
-      <div class="col-lg-12">
-        <div class="logo-wrapper"><h1>Recipe Box</h1></div>
-
+      <div class="col-md-6 col-md-offset-3">
+        <div class="logo-wrapper">
+          <h1>Recipe Box</h1>
+        </div>
       </div>
-
+    </div>
       <div class="row">
        <div class="col-lg-6">
         <div ng-include="'components/login/login.html'"></div>
-      </div>
+        </div>
       <div class="col-lg-6">
         <div ng-include="'components/navbar/navbar.html'"></div>
       </div>
     </div>
-    <div class="container" ng-controller="MainCtrl">
+    
       <div ng-view></div>
-    </div>
+     
 
     <hr>
-    <div class="footer">
-            <div ng-include="'components/your-recipes/your-recipes.html'"></div>
-
-       
-
-    </div>
+    <div class="footer"> Social media icons tk</div>
 </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

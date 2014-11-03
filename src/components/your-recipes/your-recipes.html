@@ -1,19 +1,19 @@
-<div ng-controller="yourRecipesCtrl">
-	<div class="wrap" ng-repeat="row in recipeRows ">
-	<div class="row">
+<div class="container-fluid" >
+	<div class="wrap" ng-repeat="row in recipeRows">
+		<div class="row">
 			<div class=" col-sm-6 col-md-4 col-lg-3" ng-repeat="r in row">
-			<div class="recipe-holder">
-				<img class="image-responsive" src="{{r.image}}" style="width: 300px; height: 300px;">
-				<div class="recipe-caption">
-				<h4 class="r-title">{{r.title | uppercase }} </h4>
-</div>
-</div>
-			</div> 
-		</div>
-	</div>
+				<div class="recipe-holder">
+					<img class="image-responsive" src="{{r.image}}" style="width: 300px; height: 300px;" />
+					<div class="recipe-caption">
+						<h4 class="r-title">{{r.title | uppercase }} </h4>
+					</div><!--end of caption -->
+				</div><!--end of recipe holder -->
+			</div> <!--end of column -->
+		</div><!--end of row -->
+		
 
-</div>
+	</div><!--end of wrap -->
+</div> <!--end of container -->
 
 <!-- maybe do an on-click display -->
 
-  

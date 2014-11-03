@@ -21,7 +21,11 @@ $scope.addRecipe = function(submission) {
 
 ////S3 stuff/////
 
-
+$scope.creds = {
+  bucket: amazon_bucket,
+  access_key: amazon_access_key,
+  secret_key: amazon_secret_key
+};
 
 $scope.onFileSelect = function($files) {
   $scope.file = $files[0];
