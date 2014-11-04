@@ -1,14 +1,8 @@
-<nav class="collapse navbar-collapse" ng-controller="NavbarCtrl"> 
+<nav class="navbar navbar-default" ng-controller="NavbarCtrl"> 
 	<ul class="nav navbar-nav navbar-right">
-	  <!-- <li>
-	  	<a ng-href="#">What's cooking</a>
-	  </li> -->
-	  <li>
-	  	<!-- <a ng-href="/your-recipes/"><h4>Your recipes</h4></a> -->
-	  	<a ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a>
-	  </li>
-		<li>
-			<a ng-click="goRecipe('new')"><h4>Add recipe</h4></a>
+	  
+	  <li><a ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a></li>
+		<li><a ng-click="goRecipe('new')"><h4>Add recipe</h4></a>
 		</li>
 		<!-- <li ng-show="!user">
 	  	<a ng-href="/proxy?url=login">Sign in</a>
@@ -18,3 +12,5 @@
 	  </li>
 	 </ul>
 </nav>
+
+

@@ -19,7 +19,14 @@
   color: white;
   }
 }
- 
+
+.nav li:hover {
+  cursor: pointer;
+  background-color: rgba(199, 149, 109, 0.7);
+  h4 { 
+  color: white;
+  }
+} 
 
 h1 {
   padding-top: 25px;
@@ -74,6 +81,7 @@ img {
 }
 
 .recipe-caption {
+  cursor: pointer;
   display: block;
   padding: 15px;
   height: 85px;
@@ -88,14 +96,32 @@ img {
 .recipe-caption:hover {
   color: #fff;
   background-color: rgba(199, 149, 109, 0.9);
-  mouse: pointer;
       h4 { 
         font-size: 20px;
     }
 }
 
 img:hover {
+  cursor: pointer;
   opacity: 0.7;
+}
+.categories {
+  margin: 1px;
+  background-color: rgba(199, 149, 109, 0.9);
+  border: 1px solid #fff;
+
+}
+
+.categories:hover {
+  background-color: #99B898;
+  color: #fff;
+  border: 0px;
+}
+
+button.on {
+  background-color: #99B898;
+  color: #fff;
+  border: 0px;
 }
 
 .footer {

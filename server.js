@@ -22,6 +22,8 @@
 // 
 //    You can navigate to http://localhost:3000/proxy?url=http://www.google.com/&name=Bob&age=20
 //    in your browser manually to see this in action -- you'll see the Google homepage.
+
+// var AWS = require('aws-sdk');
  
 var express = require('express');
 var URL = require('url');
@@ -39,10 +41,10 @@ app.use(express.static(__dirname + '/src'));
 // 	res.render('index');
 // });
 
-var amazon_bucket = process.env.AMAZON_BUCKET;
-var amazon_access_key = process.env.AMAZON_ACCESS_KEY;
-var amazon_secret_key = process.env.AMAZON_SECRET_KEY;
-console.log(amazon_access_key, amazon_secret_key, amazon_bucket);
+// var amazon_bucket = process.env.AMAZON_BUCKET;
+// var amazon_access_key = process.env.AMAZON_ACCESS_KEY;
+// var amazon_secret_key = process.env.AMAZON_SECRET_KEY;
+// console.log(amazon_access_key, amazon_secret_key, amazon_bucket);
 
 console.log('Hi, Alex! The server is running on *:3000');
  
