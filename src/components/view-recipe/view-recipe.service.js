@@ -1,0 +1,4 @@
+recipeBox.service('viewRecipe', function() {
+
+	
+});
