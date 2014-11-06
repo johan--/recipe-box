@@ -1,12 +1,18 @@
 /* Overlay style */
 
+
 .splash {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
+	color: #fff;
 	background: RGBA(153, 184, 152, 0.98);
+}
+
+.view-recipe-pic {
+	border-radius: 0px;
 }
 
 /* splash closing cross */
@@ -80,29 +86,29 @@
 	transition: opacity 0.5s;
 }
 
-.splash-hugeinc nav {
-	-webkit-perspective: 1200px;
-	perspective: 1200px;
-}
+// .splash-hugeinc nav {
+// 	-webkit-perspective: 1200px;
+// 	perspective: 1200px;
+// }
 
-.splash-hugeinc nav ul {
-	opacity: 0.4;
-	-webkit-transform: translateY(-25%) rotateX(35deg);
-	transform: translateY(-25%) rotateX(35deg);
-	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-	transition: transform 0.5s, opacity 0.5s;
-}
+// .splash-hugeinc nav ul {
+// 	opacity: 0.4;
+// 	-webkit-transform: translateY(-25%) rotateX(35deg);
+// 	transform: translateY(-25%) rotateX(35deg);
+// 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+// 	transition: transform 0.5s, opacity 0.5s;
+// }
 
-.splash-hugeinc.open nav ul {
-	opacity: 1;
-	-webkit-transform: rotateX(0deg);
-	transform: rotateX(0deg);
-}
+// .splash-hugeinc.open nav ul {
+// 	opacity: 1;
+// 	-webkit-transform: rotateX(0deg);
+// 	transform: rotateX(0deg);
+// }
 
-.splash-hugeinc.close nav ul {
-	-webkit-transform: translateY(25%) rotateX(-35deg);
-	transform: translateY(25%) rotateX(-35deg);
-}
+// .splash-hugeinc.close nav ul {
+// 	-webkit-transform: translateY(25%) rotateX(-35deg);
+// 	transform: translateY(25%) rotateX(-35deg);
+// }
 
 @media screen and (max-height: 30.5em) {
 	.overlay nav {

@@ -3,7 +3,7 @@
 var recipeBox = angular.module('recipeBox', ['firebase', 'ngRoute', 'angularFileUpload','ui.bootstrap']);
 
 recipeBox.config(['$routeProvider', function($routeProvider){
- 
+
 
 	$routeProvider.
 	when('/', {
@@ -35,28 +35,30 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 }])
 	.controller('initialize',function($rootScope){
 
-		
+
 		$rootScope.uid = localStorage.getItem('uid');
 		console.log($rootScope.uid);
 
 	})
 
 	.run(['$templateCache', function($templateCache){
- 
+
 		$templateCache.put('view-recipe/index.html',
-			'<section class="splash" ng-class="{\'splash-open\': animate}" ng-style="{\'z-index\':1000, display: \'block\'}" ng-click="close($event)">' + 
+			'<section class="splash" ng-class="{\'splash-open\': animate}" ng-style="{\'z-index\':1000, display: \'block\'}" ng-click="close($event)">' +
 			'<div class="splash-inner" ng-transclude></div>' +
 			'</section>'
 			);
 		$templateCache.put('view-recipe/content.html',
 			'<div class="splash-content text-center">' +
-			'<h1 ng-bind="title"></h1>' +
+			'<h2 ng-bind="title"></h2>' +
+			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
+      '<h3>Ingredients</h3>' +
 			'<p class="lead" ng-bind="ingredients"></p>' +
+      '<h3>Directions</h3>' +
 			'<p class="lead" ng-bind="directions"></p>' +
-			'<button class="btn btn-lg btn-outline" ng-bind="btnText || \'hey\'" ng-click="$close()"></button>' + 
+			'<button class="btn btn-lg btn-outline" ng-bind="btnText || \'Close\'" ng-click="$close()"></button>' +
 			'</div>'
 			);
 
 	}]);
 
-	
