@@ -7,7 +7,9 @@ return {
 ////S3 stuff/////
 
  uploadImage: function(file) {
-  
+
+
+
 
   // Configure The S3 Object
   var bucket = new AWS.S3({
@@ -32,7 +34,7 @@ return {
       }
       else {
         console.log(data);
-       
+
         console.log('Upload Done');
       }
     })
@@ -40,7 +42,7 @@ return {
           // Log Progress Information
           console.log(Math.round(progress.loaded / progress.total * 100) + '% done');
         });
-    
+
    } else {
     // No File Selected
     alert('No File Selected');
@@ -48,7 +50,7 @@ return {
 }
 
 
- 
+
 };
 
 });
@@ -56,7 +58,7 @@ return {
 
 
 
- 
 
- 
+
+
 

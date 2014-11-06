@@ -1,11 +1,13 @@
 'use strict'
 
 angular.module('recipeBox')
-.controller('yourRecipesCtrl', ['$scope', '$rootScope', 'SplitArrayService', '$firebase', function($scope, $rootScope, SplitArrayService, $firebase) {
+.controller('yourRecipesCtrl',
+	['$scope', '$rootScope', 'SplitArrayService', '$firebase', '$splash',
+	function($scope, $rootScope, SplitArrayService, $firebase, $splash) {
 
 	var uid = localStorage.getItem('uid');
 
-	var viewFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + uid + '/recipes/'; 
+	var viewFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + uid + '/recipes/';
 
 	var ref = new Firebase(viewFBURL);
 	var sync = $firebase(ref);
@@ -14,6 +16,18 @@ angular.module('recipeBox')
 
 	$scope.recipeRows = SplitArrayService.SplitArray($scope.recipes, 2);
 	console.log($scope.recipeRows);
+
+
+
+	$scope.openRecipe = function(recipe) {
+		$splash.open({
+			image: recipe.image,
+			title: recipe.title,
+			ingredients: recipe.ingredients,
+			directions: recipe.directions
+
+		});
+	};
 
 }]);
 
@@ -30,7 +44,7 @@ recipeBox.service('SplitArrayService', function () {
 
 			for (var i = 0; i < rowsNum; i++) {
 				var columnsArray = new Array(columns);
-				for (j = 0; j < columns; j++) {
+				for (var j = 0; j < columns; j++) {
 					var index = i * columns + j;
 
 					if (index < array.length) {
@@ -48,3 +62,22 @@ recipeBox.service('SplitArrayService', function () {
 }
 
 	});
+
+recipeBox.service('$splash', ['$modal', '$rootScope', function($modal, $rootScope) {
+			return {
+				open: function(attrs, opts) {
+					console.log("open???");
+					var scope = $rootScope.$new();
+					angular.extend(scope, attrs);
+					opts = angular.extend(opts || {}, {
+						backdrop: false,
+						scope: scope,
+						templateUrl: 'view-recipe/content.html',
+						windowTemplateUrl: 'view-recipe/index.html'
+					});
+					return $modal.open(opts);
+				}
+			};
+}]);
+
+

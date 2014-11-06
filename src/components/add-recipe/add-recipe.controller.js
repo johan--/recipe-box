@@ -6,7 +6,7 @@ recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$fir
 ////Firebase stuff ////
 $rootScope.uid = localStorage.getItem('uid');
 
-var userFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/recipes/'; 
+var userFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/recipes/';
 
 var ref = new Firebase(userFBURL);
 var sync = $firebase(ref);
@@ -20,9 +20,9 @@ $scope.addRecipe = function(submission) {
       tags.push($scope.categories[i].name);
     }
   }
-  $scope.fb_deets.$add({title: submission.title, 
-  ingredients: submission.ingredients, 
-  directions: submission.directions, 
+  $scope.fb_deets.$add({title: submission.title,
+  ingredients: submission.ingredients,
+  directions: submission.directions,
   tags: tags,
   image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + $scope.file.name}).then(function(ref){
         $location.path('/your-recipes');
@@ -30,7 +30,7 @@ $scope.addRecipe = function(submission) {
   });
 }
 
-//recipe categories 
+//recipe categories
  $scope.categories = [{
         name: "Breakfast",
         state: false
@@ -66,21 +66,17 @@ $scope.addRecipe = function(submission) {
 
 ////S3 stuff/////
 
-$scope.creds = {
-  bucket: 'recipe-box',
-  access_key: 'AKIAJCKTVTT2TIPAVTOA',
-  secret_key: '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'
-};
+
 
 $scope.onFileSelect = function($files) {
   $scope.file = $files[0];
 };
 
 $scope.upload = function() {
-  s3UploadService.uploadImage($scope.file); 
+  s3UploadService.uploadImage($scope.file);
 }
 
 }]);
 
- 
+
 

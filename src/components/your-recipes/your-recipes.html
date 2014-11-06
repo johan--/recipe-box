@@ -2,7 +2,7 @@
 	<div class="wrap" ng-repeat="row in recipeRows">
 		<div class="row">
 			<div class=" col-sm-6 col-md-4 col-lg-3" ng-repeat="r in row">
-				<div ng-click="viewRecipe(r)" class="recipe-holder">
+				<div ng-click="openRecipe(r)" class="recipe-holder">
 					<img class="image-responsive" src="{{r.image}}" style="width: 300px; height: 300px;" />
 					<div class="recipe-caption">
 						<h4 class="r-title">{{r.title | uppercase }} </h4>
