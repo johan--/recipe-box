@@ -26,6 +26,8 @@
 var express = require("express");
 var harp = require("harp");
 var app = express();
+var _ = require('underscore');
+var path = require('path');
 
 
 app.use(express.static(__dirname + "/src"));
@@ -79,8 +81,10 @@ var multipartMiddleware = multipart();
 
 app.post('/upload', multipartMiddleware, function(req, res) {
   var data = _.pick(req.body, 'type')
-    , uploadPath = path.normalize(cfg.data + '/uploads')
+  // Return a copy of the object, filtered to only have values for the whitelisted keys (or array of valid keys). Alternatively accepts a predicate indicating which keys to pick.
+    , uploadPath = path.resolve(__dirname, 'uploads')
     , file = req.files.file;
+ 	console.log(req.files)
 
   console.log(file.name); //original name (ie: sunset.png)
   console.log(file.path); //tmp path (ie: /tmp/12345-xyaz.png)
@@ -93,13 +97,15 @@ app.post('/upload', multipartMiddleware, function(req, res) {
 var uploadFile = function(file) {
   console.log("upload file on server");
 
-  var s3bucket = new AWS.S3({params: {Bucket: 'recipe-box'}});
+  var s3bucket = new AWS.S3();
+
+// {params: {Bucket: 'recipe-box'}}
 
   var params = {
         Bucket: 'recipe-box',
         Key: file.name,
         ContentType: file.type,
-        Body: file,
+        Body: file.file,
         ACL: 'public-read',
         ServerSideEncryption: 'AES256'
       };

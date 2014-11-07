@@ -1,7 +1,7 @@
 'use strict';
 
 
-recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin', '$location', 's3UploadService', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, s3UploadService) {
+recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin', '$location', '$upload', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $upload) {
 
 ////Firebase stuff ////
 $rootScope.uid = localStorage.getItem('uid');
@@ -73,10 +73,27 @@ $scope.onFileSelect = function($files) {
   $scope.file = $files[0];
 };
 
-$scope.upload = function() {
-  s3UploadService.uploadImage($scope.file);
-}
 
+  $scope.upload = function() {
+    $upload.upload({
+        url: '/upload', //upload.php script, node.js route, or servlet url
+        method: 'POST',
+        //headers: {'header-key': 'header-value'},
+        //withCredentials: true,
+        // data: {myObj: $scope.myModelObj},
+        file: $scope.file, // or list of files ($files) for html5 only
+        //fileName: 'doc.jpg' or ['1.jpg', '2.jpg', ...] // to modify the name of the file(s)
+        // customize file formData name ('Content-Disposition'), server side file variable name.
+        //fileFormDataName: myFile, //or a list of names for multiple files (html5). Default is 'file'
+        // customize how data is added to formData. See #40#issuecomment-28612000 for sample code
+        //formDataAppender: function(formData, key, val){}
+      }).progress(function(evt) {
+        console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+      }).success(function(data, status, headers, config) {
+        // file is uploaded successfully
+        console.log(data);
+      });
+    };
 }]);
 
 
