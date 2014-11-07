@@ -28,6 +28,7 @@ var harp = require("harp");
 var app = express();
 var _ = require('underscore');
 var path = require('path');
+var fs = require('fs');
 
 
 app.use(express.static(__dirname + "/src"));
@@ -81,7 +82,7 @@ var multipartMiddleware = multipart();
 
 app.post('/upload', multipartMiddleware, function(req, res) {
   var data = _.pick(req.body, 'type')
-  // Return a copy of the object, filtered to only have values for the whitelisted keys (or array of valid keys). Alternatively accepts a predicate indicating which keys to pick.
+  // Return a copy of the object, filtered to only have values for the whitelisted keys (or array of valid keys).
     , uploadPath = path.resolve(__dirname, 'uploads')
     , file = req.files.file;
  	console.log(req.files)
@@ -98,33 +99,31 @@ var uploadFile = function(file) {
   console.log("upload file on server");
 
   var s3bucket = new AWS.S3();
+  fs.readFile(file.path, function(err, data) {
+  	//FS reads files and
+  	console.log(data);
+	  var params = {
+	        Bucket: 'recipe-box',
+	        Key: file.name,
+	        ContentType: file.type,
+	        Body: data,
+	        ACL: 'public-read',
+	        ServerSideEncryption: 'AES256'
+	      };
+
+	    s3bucket.putObject(params, function(err, data) {
+	      if (err) {
+	        console.log("Error uploading data: ", err);
+	      } else {
+	        console.log("Successfully uploaded data to recipe-box");
+	      }
+	  });
+
+  });
 
 // {params: {Bucket: 'recipe-box'}}
 
-  var params = {
-        Bucket: 'recipe-box',
-        Key: file.name,
-        ContentType: file.type,
-        Body: file.file,
-        ACL: 'public-read',
-        ServerSideEncryption: 'AES256'
-      };
-
-  // s3bucket.createBucket(function() {
-    // var data = {Key: file.name, Body: file};
-    s3bucket.putObject(params, function(err, data) {
-      if (err) {
-        console.log("Error uploading data: ", err);
-      } else {
-        console.log("Successfully uploaded data to recipe-box");
-      }
-
-  });
 };
-// var s3bucket = new AWS.S3({
-//     region: 'us-west-2',
-//     credentials: new AWS.Credentials(aws_access_key_id, aws_secret_access_key)
-//   });
 
 
 
