@@ -1,12 +1,24 @@
-<form class="form-inline" name="auth" ng-controller="AuthCtrl"> 
-	<div class="form-group" id="login">
-
-	  <input type="email" placeholder="Email address" class="form-control"ng-model="email" ng-hide="user">
-	  <input type="password" placeholder="Password" class="form-control" ng-model="password" ng-hide="user">
-	  <span ng-model='email'></span>
-	  <a href ng-click="signIn()" ng-hide="user">Sign In</a>
-	  <a href ng-click="signUp()" ng-hide="user">Sign Up</a>
-	</div>
-</form>
-
-  
+<div class="row">
+  <div class="col-md-12 login-bkgrd">
+    <div class="row">
+      <div class="col-md-push-2 col-md-8 col-xl-push-3 col-xl-6 login-wrap">
+        <form class="form" name="auth" ng-controller="AuthCtrl">
+          <div class="form-group" id="login">
+            <div class="row">
+              <div class="col-md-push-1 col-md-10">
+                <input type="email" placeholder="Email address" class="form-control"ng-model="email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-push-1 col-md-10">
+                <input type="password" placeholder="Password" class="form-control" ng-model="password">
+              </div>
+            </div>
+            <button class="btn btn-default" ng-click="signIn()">Sign In</button>
+            <button class="btn btn-default" ng-click="signUp()">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

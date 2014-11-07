@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, $firebase, $firebaseSimpleLogin) {
+angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location) {
 
 
 
@@ -19,7 +19,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
     }).then(function(user) {
       console.log('user', user);
               localStorage.setItem('uid', user.uid);
-
+              $location.path('/your-recipes');
     }, function(error) {
       console.log('error', error);
     });
@@ -27,7 +27,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
 
   $scope.signUp = function() {
     auth.$createUser(
-      $scope.email, 
+      $scope.email,
       $scope.password
     ).then(function(user) {
       console.log('user', user);
@@ -43,7 +43,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
     console.log("user 1", auth.user);
     auth.$logout(function(){
     });
-        
+
 
   };
 
@@ -61,8 +61,8 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
   $rootScope.$on('$firebaseSimpleLogin:logout', function (e, authUser) {
       $rootScope.user = null;
 
-   
+
   });
-  
+
 });
-  
+
