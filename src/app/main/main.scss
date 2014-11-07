@@ -1,4 +1,4 @@
-@import 'view-recipes';
+@import '../../components/view-recipe/view-recipes';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -17,7 +17,7 @@
 
 .nav {
   background-color: #99B898;
-  h4 { 
+  h4 {
   color: white;
   }
 }
@@ -25,10 +25,10 @@
 .nav li:hover {
   cursor: pointer;
   background-color: rgba(199, 149, 109, 0.7);
-  h4 { 
+  h4 {
   color: white;
   }
-} 
+}
 
 h1 {
   padding-top: 25px;
@@ -39,7 +39,7 @@ h1 {
    color: #99B898;
    text-shadow:
        2px 2px 0 white,
-     -1px -1px 0 white,  
+     -1px -1px 0 white,
       1px -1px 0 white,
       -1px 1px 0 white,
        1px 1px 0 white;
@@ -59,7 +59,7 @@ h1 {
 
 body {
   font-family: Quicksand, sans-serif;
-  
+
 }
 
 li {
@@ -74,7 +74,7 @@ li {
 
 .recipe-holder {
   padding: 5px;
-  margin: 15px;  
+  margin: 15px;
 }
 
 img {
@@ -98,7 +98,7 @@ img {
 .recipe-caption:hover {
   color: #fff;
   background-color: rgba(199, 149, 109, 0.9);
-      h4 { 
+      h4 {
         font-size: 20px;
     }
 }

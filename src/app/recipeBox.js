@@ -1,6 +1,6 @@
 'use strict';
 
-var recipeBox = angular.module('recipeBox', ['firebase', 'ngRoute', 'angularFileUpload','ui.bootstrap']);
+var recipeBox = angular.module('recipeBox', ['firebase', 'ngRoute', 'ngSanitize', 'angularFileUpload','ui.bootstrap']);
 
 recipeBox.config(['$routeProvider', function($routeProvider){
 
@@ -50,10 +50,17 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			);
 		$templateCache.put('view-recipe/content.html',
 			'<div class="splash-content text-center">' +
-			'<h1 ng-bind="title"></h1>' +
-			'<p class="lead" ng-bind="ingredients"></p>' +
-			'<p class="lead" ng-bind="directions"></p>' +
-			'<button class="btn btn-lg btn-outline" ng-bind="btnText || \'hey\'" ng-click="$close()"></button>' +
+			'<h2 ng-bind="title"></h2>' +
+			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
+			'<div class="row">' +
+			'<div class="col-lg-offset-3 col-lg-6">' +
+      '<h3>Ingredients</h3>' +
+			'<p class="lead" ng-bind-html="ingredients"></p>' +
+      '<h3>Directions</h3>' +
+			'<p class="lead directions" ng-bind="directions"></p>' +
+			'</div>' +
+			'</div>' +
+			'<button class="splash-close" ng-click="$close()"><span class="glyphicon glyphicon-remove"></span></button>' +
 			'</div>'
 			);
 

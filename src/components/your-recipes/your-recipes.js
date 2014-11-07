@@ -20,10 +20,12 @@ angular.module('recipeBox')
 
 
 	$scope.openRecipe = function(recipe) {
+		var styled_ingredients = recipe.ingredients.split(',').join('<br>');
+		console.log(styled_ingredients);
 		$splash.open({
 			image: recipe.image,
 			title: recipe.title,
-			ingredients: recipe.ingredients,
+			ingredients: styled_ingredients,
 			directions: recipe.directions
 
 		});
