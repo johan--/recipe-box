@@ -26,7 +26,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'components/your-recipes/your-recipes.html',
 		controller: 'yourRecipesCtrl'
 	}).
-	when('/login', {
+	when('/', {
 		templateUrl: 'components/login/login.html'
 	}).
 	otherwise({
@@ -50,13 +50,10 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			);
 		$templateCache.put('view-recipe/content.html',
 			'<div class="splash-content text-center">' +
-			'<h2 ng-bind="title"></h2>' +
-			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
-      '<h3>Ingredients</h3>' +
+			'<h1 ng-bind="title"></h1>' +
 			'<p class="lead" ng-bind="ingredients"></p>' +
-      '<h3>Directions</h3>' +
 			'<p class="lead" ng-bind="directions"></p>' +
-			'<button class="btn btn-lg btn-outline" ng-bind="btnText || \'Close\'" ng-click="$close()"></button>' +
+			'<button class="btn btn-lg btn-outline" ng-bind="btnText || \'hey\'" ng-click="$close()"></button>' +
 			'</div>'
 			);
 
