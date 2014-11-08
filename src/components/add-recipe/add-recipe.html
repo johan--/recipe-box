@@ -1,14 +1,14 @@
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-5 col-md-offset-3">
 		<div class="form-container">
 			<div class="col-sm-9 col-sm-offset-3">
-				<h2>Add a recipe</h2> 
+				<h2 class="form-title">Add a recipe</h2>
 			</div>
-			
+
 			<form name="newRecipe" ng-controller="addRecipeCtrl" role="form" class="form-horizontal" ng-submit="upload(); addRecipe(newRecipe)" method="post" enctype="multipart/form-data" novalidate>
 
 
-				
+
 				<div class="form-group">
 					<input type="hidden" name="success_action_redirect" value="http://recipe-box.s3.amazonaws.com/successful_upload.html" />
 
@@ -19,9 +19,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="ingredients" class="col-sm-3 control-label">Ingredients:</label> 
+					<label for="ingredients" class="col-sm-3 control-label">Ingredients:</label>
 					<div class="col-sm-9">
-						<textarea id="title" class="form-control" ng-model="newRecipe.ingredients"></textarea> 
+						<textarea id="title" class="form-control" ng-model="newRecipe.ingredients"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -41,17 +41,17 @@
 			<div  class="col-sm-9">
 
 					<button ng-repeat="c in categories" ng-click="toggle(c)" type="button" class="btn categories" ng-class="{on: c.state}">{{c.name}}</button>
-			</div>   
+			</div>
 
 					</div>
-				
-				
 
-				
+
+
+
 				<div class="col-sm-offset-6 col-sm-9">
 					<button class="btn btn-default btn-lg" ng-href="/your-recipes"type="submit" ng-disabled="form.$invalid || isUnchanged(newRecipe)">Add recipe</button>
 				</div>
-			</form>  
+			</form>
 	</div>
 	</div>
 </div>

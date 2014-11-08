@@ -1,4 +1,6 @@
 @import '../../components/view-recipe/view-recipes';
+@import '../../components/login/login';
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -30,7 +32,8 @@
   }
 }
 
-h1 {
+.logo {
+
   padding-top: 25px;
   font-family: 'Cookie', cursive;
   font-size: 90px;
@@ -45,12 +48,21 @@ h1 {
        1px 1px 0 white;
 }
 
+h1 {
+
+  font-family: 'Cookie', cursive;
+  text-align: center;
+  margin-bottom: 1em;
+
+}
+
 .logo-wrapper {
   margin: 0 auto;
   margin-top: -20px;
-  background-color: rgba(199, 149, 109, 0.7);
+  background-color: #D6B397;
   width: 400px;
-  padding: 5px;
+  height: 150px;
+  padding-bottom: 5px;
   border-bottom-left-radius: 15px;
 
    }
@@ -60,6 +72,20 @@ h1 {
 body {
   font-family: Quicksand, sans-serif;
 
+}
+.form-container {
+  padding: 10px;
+  margin: 20px;
+}
+
+.form-title {
+  padding: 10px;
+}
+
+
+
+input.ng-dirty.ng-invalid {
+  color: red
 }
 
 li {
@@ -80,6 +106,17 @@ li {
 img {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+}
+
+.container-fluid {
+  position: relative;
+  z-index: 100;
+}
+
+.logged-in-nav {
+  position: absolute;
+  top: 20px;
+  right: 40px;
 }
 
 .recipe-caption {
@@ -129,4 +166,6 @@ button.on {
 .footer {
   margin: 0 auto;
   padding: 40px;
+  clear: both;
+  // position: absolute;
 }

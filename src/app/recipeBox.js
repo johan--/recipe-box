@@ -57,7 +57,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
       '<h3>Ingredients</h3>' +
 			'<p class="lead" ng-bind-html="ingredients"></p>' +
       '<h3>Directions</h3>' +
-			'<p class="lead directions" ng-bind="directions"></p>' +
+			'<p class="lead directions" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
 			'<button class="splash-close" ng-click="$close()"><span class="glyphicon glyphicon-remove"></span></button>' +

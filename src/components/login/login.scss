@@ -1,9 +1,24 @@
 .login-wrap {
-  background: RGBA(153, 184, 152, 0.5);
+  background: RGBA(153, 184, 152, 0.8);
   margin: 50px;
   padding: 50px;
 }
 
+
+
+
 .login-bkgrd {
-  // background-image: url(../assets/brownies-background.jpg);
+  background: url(../../assets/brownies-background.jpg) no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 200px;
+
+}
+
+.login-bkgrd:after {
+  opacity: 1.0;
 }

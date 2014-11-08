@@ -1,7 +1,8 @@
 <div class="row">
-  <div class="col-md-12 login-bkgrd">
+  <div class="col-xl-12 login-bkgrd">
     <div class="row">
-      <div class="col-md-push-2 col-md-8 col-xl-push-3 col-xl-6 login-wrap">
+      <div class="col-md-push-3 col-md-6 col-xl-push-3 col-xl-6 login-wrap">
+    <h1>Sign up or Sign in</h1>
         <form class="form" name="auth" ng-controller="AuthCtrl">
           <div class="form-group" id="login">
             <div class="row">
@@ -14,8 +15,12 @@
                 <input type="password" placeholder="Password" class="form-control" ng-model="password">
               </div>
             </div>
+            <div class="row">
+            <div class="col-md-offset-4 col-md-4">
             <button class="btn btn-default" ng-click="signIn()">Sign In</button>
             <button class="btn btn-default" ng-click="signUp()">Sign Up</button>
+            </div>
+            </div>
           </div>
         </form>
       </div>
