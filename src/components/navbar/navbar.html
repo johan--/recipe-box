@@ -1,5 +1,5 @@
-<nav class="logged-in-nav navbar-default" ng-controller="NavbarCtrl">
-	<ul class="nav navbar-right">
+<nav class="logged-in-nav navbar navbar-default" ng-controller="NavbarCtrl" ng-show="user">
+	<ul class="nav navbar-nav navbar-right">
 
 	  <li><a ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a></li>
 		<li><a ng-click="goRecipe('new')"><h4>Add recipe</h4></a>

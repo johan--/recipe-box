@@ -1,0 +1,39 @@
+.wrap {
+  padding: 50px;
+}
+
+.recipe-holder {
+  padding: 5px;
+  margin: 15px;
+}
+
+img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.recipe-caption {
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+  height: 85px;
+  background-color: rgb(199, 149, 109);
+  background-color: rgba(199, 149, 109, 0.5);
+  width: 300px;
+  text-align: center;
+  border-bottom-right-radius: 10px;
+
+}
+
+.recipe-caption:hover {
+  color: #fff;
+  background-color: rgba(199, 149, 109, 0.9);
+      h4 {
+        font-size: 20px;
+    }
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

@@ -1,6 +1,9 @@
 @import '../../components/view-recipe/view-recipes';
 @import '../../components/login/login';
+@import '../../components/your-recipes/your-recipes';
 
+$main-green: #99B898;
+$main-tan: #D6B397;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -18,7 +21,7 @@
 }
 
 .nav {
-  background-color: #99B898;
+  background-color: $main-green;
   h4 {
   color: white;
   }
@@ -26,7 +29,7 @@
 
 .nav li:hover {
   cursor: pointer;
-  background-color: rgba(199, 149, 109, 0.7);
+  background-color: $main-tan;
   h4 {
   color: white;
   }
@@ -39,7 +42,7 @@
   font-size: 90px;
   text-align: center;
    // -webkit-text-stroke: 5px #C7956D;
-   color: #99B898;
+   color: $main-green;
    text-shadow:
        2px 2px 0 white,
      -1px -1px 0 white,
@@ -59,7 +62,7 @@ h1 {
 .logo-wrapper {
   margin: 0 auto;
   margin-top: -20px;
-  background-color: #D6B397;
+  background-color: $main-tan;
   width: 400px;
   height: 150px;
   padding-bottom: 5px;
@@ -73,6 +76,7 @@ body {
   font-family: Quicksand, sans-serif;
 
 }
+
 .form-container {
   padding: 10px;
   margin: 20px;
@@ -98,15 +102,7 @@ li {
   padding: 15px;
 }
 
-.recipe-holder {
-  padding: 5px;
-  margin: 15px;
-}
 
-img {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
 
 .container-fluid {
   position: relative;
@@ -116,34 +112,12 @@ img {
 .logged-in-nav {
   position: absolute;
   top: 20px;
-  right: 40px;
-}
+  width: 100vw;
+  background-color: $main-green;
+  z-index: 1;
+ }
 
-.recipe-caption {
-  cursor: pointer;
-  display: block;
-  padding: 15px;
-  height: 85px;
-  background-color: rgb(199, 149, 109);
-  background-color: rgba(199, 149, 109, 0.5);
-  width: 300px;
-  text-align: center;
-  border-bottom-right-radius: 10px;
 
-}
-
-.recipe-caption:hover {
-  color: #fff;
-  background-color: rgba(199, 149, 109, 0.9);
-      h4 {
-        font-size: 20px;
-    }
-}
-
-img:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
 .categories {
   margin: 1px;
   background-color: rgba(199, 149, 109, 0.9);
@@ -152,15 +126,13 @@ img:hover {
 }
 
 .categories:hover {
-  background-color: #99B898;
+  background-color: $main-green;
   color: #fff;
-  border: 0px;
 }
 
 button.on {
-  background-color: #99B898;
+  background-color: $main-green;
   color: #fff;
-  border: 0px;
 }
 
 .footer {
