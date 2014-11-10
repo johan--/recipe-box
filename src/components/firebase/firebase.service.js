@@ -47,7 +47,9 @@ angular.module('recipeBox')
 
               return view_deets;
 
-            }
+            },
+
+            deleteRecipe : function()
 
            }
 

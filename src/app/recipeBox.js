@@ -64,6 +64,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'<p class="lead directions" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
+			'<button class="delete" ng-click="firebaseService.deleteRecipe()"><span class="glyphicon glyphicon-trash"></span></button>' +
 			'<button class="splash-close" ng-click="$close()"><span class="glyphicon glyphicon-remove"></span></button>' +
 			'</div>'
 			);
