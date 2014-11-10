@@ -40,25 +40,10 @@ angular.module('recipeBox')
         "Vegetarian",
         "Drink"];
 
-$scope.viewCategory = function(tag, recipesArr){
-	debugger;
-		var currentTag = recipeCategoriesService.viewTag(tag, recipesArr);
-		 console.log(currentTag);
+$scope.viewCategory = function(tag){
+		recipeCategoriesService.viewTag(tag);
 	}
 
-//             for (var i = 0; i < recipesArr.length; i++) {
-//               if (recipesArr[i].tags.indexOf(tag) != -1) {
-//                 currentTag.push(recipesArr[i]);
-//               }
-//             }
-
-//             console.log('???', currentTag);
-
-//             var urlTag = tag.replace(/\s/g, "g");
-
-//             $location.path('/' + tag);
-
-// }
 }]);
 
 
@@ -96,20 +81,6 @@ recipeBox.service('SplitArrayService', function () {
 
 	});
 
-recipeBox.service('$splash', ['$modal', '$rootScope', function($modal, $rootScope) {
-			return {
-				open: function(attrs, opts) {
-					var scope = $rootScope.$new();
-					angular.extend(scope, attrs);
-					opts = angular.extend(opts || {}, {
-						backdrop: false,
-						scope: scope,
-						templateUrl: 'view-recipe/content.html',
-						windowTemplateUrl: 'view-recipe/index.html'
-					});
-					return $modal.open(opts);
-				}
-			};
-}]);
+
 
 

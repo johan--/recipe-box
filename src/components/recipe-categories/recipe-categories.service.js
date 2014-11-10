@@ -2,8 +2,13 @@ angular.module('recipeBox')
       .service('recipeCategoriesService', ['$firebase', '$location', function($firebase, $location) {
         return {
 
-          viewTag : function(tag, recipesArr) {
+          viewTag : function(tag) {
 
+           var urlTag = tag.toLowerCase().replace(/\s/g, "-");
+           $location.path('/your-recipes/' + urlTag);
+         },
+
+          viewTagRecipes : function(tag, recipesArr) {
 
           var currentTag = [];
 
@@ -13,12 +18,8 @@ angular.module('recipeBox')
               }
             }
 
-            console.log('???', currentTag);
+            console.log('viewTagRecipes function :', currentTag);
 
-            var urlTag = tag.toLowerCase().replace(/\s/g, "-");
-
-            $location.path('/' + tag);
-            console.log(urlTag)
             return currentTag;
 
           }

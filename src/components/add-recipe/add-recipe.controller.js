@@ -28,6 +28,7 @@ $scope.addRecipe = function(submission) {
         $location.path('/your-recipes');
         console.log($location.path());
   });
+  $scope.fb_deets.$add()
 }
 
 //recipe categories
