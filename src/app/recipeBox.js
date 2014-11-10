@@ -26,6 +26,10 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'components/your-recipes/your-recipes.html',
 		controller: 'yourRecipesCtrl'
 	}).
+	when('/your-recipes/:recipeTag', {
+		templateUrl: 'components/recipe-categories/recipe-categories.html',
+		controller: 'recipeCategoriesCtrl'
+	}).
 	when('/', {
 		templateUrl: 'components/login/login.html'
 	}).

@@ -1,0 +1,23 @@
+<div class="container-fluid" >
+<div class="row">
+<div class="tag-bar" >
+<div ng-repeat="tag in tags" ng-click="viewCategory(tag)" class="tag-links"> {{tag}}</div>
+</div>
+</div>
+    <div class="row">
+      <div class=" col-sm-6 col-md-4 col-lg-3" ng-repeat="c in row">
+        <div ng-click="openRecipe(c)" class="recipe-holder">
+          <img class="image-responsive" src="{{c.image}}" style="width: 300px; height: 300px;" />
+          <div class="recipe-caption">
+            <h4 class="c-title">{{r.title | uppercase }} </h4>
+          </div><!--end of caption -->
+        </div><!--end of recipe holder -->
+      </div> <!--end of column -->
+    </div><!--end of row -->
+
+
+  </div><!--end of wrap -->
+</div> <!--end of container -->
+
+<!-- maybe do an on-click display -->
+

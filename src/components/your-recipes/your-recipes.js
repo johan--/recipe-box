@@ -1,9 +1,9 @@
 'use strict'
 
 angular.module('recipeBox')
-.controller('yourRecipesCtrl',
-	['$scope', '$rootScope', 'SplitArrayService', '$firebase', '$splash',
-	function($scope, $rootScope, SplitArrayService, $firebase, $splash) {
+	.controller('yourRecipesCtrl',
+		['$scope', '$rootScope', 'SplitArrayService', '$firebase', '$splash', 'recipeCategoriesService',
+		function($scope, $rootScope, SplitArrayService, $firebase, $splash, recipeCategoriesService) {
 
 	var uid = localStorage.getItem('uid');
 
@@ -22,7 +22,6 @@ angular.module('recipeBox')
 	$scope.openRecipe = function(recipe) {
 		var styled_ingredients = recipe.ingredients.split(',').join('<br>');
 		var styled_directions = recipe.directions.split('.').join('.<br>');
-		console.log(styled_ingredients);
 		$splash.open({
 			image: recipe.image,
 			title: recipe.title,
@@ -32,7 +31,33 @@ angular.module('recipeBox')
 		});
 	};
 
+	$scope.tags = ["Breakfast",
+       	"Easy lunch",
+        "Entree",
+        "Snack",
+        "Dessert",
+        "Side",
+        "Vegetarian",
+        "Drink"];
+
+$scope.viewCategory = function(tag){
+		var currentTag = [];
+
+            for (var i = 0; i < recipesArr.length; i++) {
+              if (recipesArr[i].tags.indexOf(tag) != -1) {
+                currentTag.push(recipesArr[i]);
+              }
+            }
+
+            console.log('???', currentTag);
+
+            location.path('/' + tag)
+
+}
 }]);
+
+
+
 
 recipeBox.service('SplitArrayService', function () {
 	return {
@@ -69,7 +94,6 @@ recipeBox.service('SplitArrayService', function () {
 recipeBox.service('$splash', ['$modal', '$rootScope', function($modal, $rootScope) {
 			return {
 				open: function(attrs, opts) {
-					console.log("open???");
 					var scope = $rootScope.$new();
 					angular.extend(scope, attrs);
 					opts = angular.extend(opts || {}, {

@@ -20,29 +20,48 @@ $main-tan: #D6B397;
   }
 }
 
-.nav {
+h1 {
+
+  font-family: 'Cookie', cursive;
+  text-align: center;
+  // margin-bottom: 1em;
+
+}
+
+body {
+  // padding-top: 70px;
+  font-family: Quicksand, sans-serif;
+}
+
+.navbar-default {
   background-color: $main-green;
   h4 {
   color: white;
   }
 }
 
-.nav li:hover {
+
+.navbar-default li:hover {
   cursor: pointer;
   background-color: $main-tan;
-  h4 {
-  color: white;
-  }
 }
 
-.logo {
+.navbar-default li:active {
+  cursor: pointer;
+  background-color: $main-tan;
+}
 
-  padding-top: 25px;
+.navbar-brand {
+  margin-top: -20px;
+  height: 100px;
+}
+
+
+
+.logo-small {
   font-family: 'Cookie', cursive;
-  font-size: 90px;
-  text-align: center;
-   // -webkit-text-stroke: 5px #C7956D;
-   color: $main-green;
+  font-size: 50px;
+  color: $main-tan;
    text-shadow:
        2px 2px 0 white,
      -1px -1px 0 white,
@@ -51,31 +70,6 @@ $main-tan: #D6B397;
        1px 1px 0 white;
 }
 
-h1 {
-
-  font-family: 'Cookie', cursive;
-  text-align: center;
-  margin-bottom: 1em;
-
-}
-
-.logo-wrapper {
-  margin: 0 auto;
-  margin-top: -20px;
-  background-color: $main-tan;
-  width: 400px;
-  height: 150px;
-  padding-bottom: 5px;
-  border-bottom-left-radius: 15px;
-
-   }
-
-
-
-body {
-  font-family: Quicksand, sans-serif;
-
-}
 
 .form-container {
   padding: 10px;
@@ -86,16 +80,15 @@ body {
   padding: 10px;
 }
 
-
+#email, #password {
+  margin-top: 20px;
+}
 
 input.ng-dirty.ng-invalid {
   color: red
 }
 
-li {
-  color: #C7956D;
-  font-size: 15px;
-}
+
 
 .login {
   float: left;
@@ -109,13 +102,7 @@ li {
   z-index: 100;
 }
 
-.logged-in-nav {
-  position: absolute;
-  top: 20px;
-  width: 100vw;
-  background-color: $main-green;
-  z-index: 1;
- }
+
 
 
 .categories {

@@ -1,10 +1,17 @@
+$main-green: #99B898;
+$main-tan: #D6B397;
+
 .login-wrap {
   background: RGBA(153, 184, 152, 0.9);
   margin: 50px;
   padding: 50px;
+  color: white;
+  text-align: center;
 }
 
-
+.teaser {
+  padding-bottom: 20px;
+}
 
 
 .login-bkgrd {
@@ -21,3 +28,31 @@
 .login-bkgrd:after {
   opacity: 1.0;
 }
+
+.logo {
+
+  padding-top: 25px;
+  font-family: 'Cookie', cursive;
+  font-size: 90px;
+  text-align: center;
+   color: $main-green;
+   text-shadow:
+       2px 2px 0 white,
+     -1px -1px 0 white,
+      1px -1px 0 white,
+      -1px 1px 0 white,
+       1px 1px 0 white;
+}
+
+.logo-wrapper {
+  margin: 0 auto;
+  margin-top: -20px;
+  background-color: $main-tan;
+  width: 400px;
+  height: 150px;
+  padding-bottom: 5px;
+  border-bottom-left-radius: 15px;
+  position: absolute;
+  z-index: 200;
+
+  }
