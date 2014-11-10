@@ -17,39 +17,38 @@ $scope.addRecipe = function(submission) {
     firebaseService.addToCategory(tags[i], submission, $scope.file.name);
     }
 
+
   firebaseService.addToRecipes(submission, tags, $scope.file.name);
-  //make this a promise
-        // .then(function(ref){
-        // $location.path('/your-recipes');
+
 
 };
 
 //recipe categories
  $scope.categories = [{
-        name: "Breakfast",
+        name: "breakfast",
         state: false
     }, {
-        name: "Easy lunch",
+        name: "easy lunch",
         state: false
     }, {
-        name: "Entree",
-        state: false
-
-    }, {
-        name: "Snack",
-        state: false
-    }, {
-        name: "Dessert",
-        state: false
-    }, {
-        name: "Side",
+        name: "entree",
         state: false
 
     }, {
-        name: "Vegetarian",
+        name: "snack",
         state: false
     }, {
-        name: "Drink",
+        name: "dessert",
+        state: false
+    }, {
+        name: "side",
+        state: false
+
+    }, {
+        name: "vegetarian",
+        state: false
+    }, {
+        name: "drink",
         state: false
 
     }];

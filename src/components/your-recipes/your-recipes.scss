@@ -7,7 +7,6 @@ $main-tan: #D6B397;
 
 .tag-bar {
   width: 100vw;
-  background-color: yellow;
   padding-left: 50px;
   padding-right: 50px;
   margin-top:20px;
@@ -17,6 +16,13 @@ $main-tan: #D6B397;
   background-color: $main-tan;
   display: inline-block;
   padding: 20px;
+  cursor: pointer;
+}
+
+.tag-links:hover {
+  background-color: $main-green;
+  padding: 20px;
+  cursor: pointer;
 }
 
 .recipe-holder {

@@ -8,21 +8,21 @@ angular.module('recipeBox')
            $location.path('/your-recipes/' + urlTag);
          },
 
-          viewTagRecipes : function(tag, recipesArr) {
+          // viewTagRecipes : function(tag, recipesArr) {
 
-          var currentTag = [];
+          // var currentTag = [];
 
-            for (var i = 0; i < recipesArr.length; i++) {
-              if (recipesArr[i].tags.indexOf(tag) != -1) {
-                currentTag.push(recipesArr[i]);
-              }
-            }
+          //   for (var i = 0; i < recipesArr.length; i++) {
+          //     if (recipesArr[i].tags.indexOf(tag) != -1) {
+          //       currentTag.push(recipesArr[i]);
+          //     }
+          //   }
 
-            console.log('viewTagRecipes function :', currentTag);
+          //   console.log('viewTagRecipes function :', currentTag);
 
-            return currentTag;
+          //   return currentTag;
 
-          }
+          // }
 
         }
 

@@ -1,10 +1,10 @@
 angular.module('recipeBox')
-      .service('firebaseService', ['$firebase', '$rootScope', function($firebase, $rootScope) {
+      .service('firebaseService', ['$firebase', '$rootScope', '$location', function($firebase, $rootScope, $location) {
         return {
 
            addToCategory : function(category, submission, fileName){
-            $rootScope.uid = localStorage.getItem('uid');
 
+              $rootScope.uid = localStorage.getItem('uid');
               var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid +"/"+ category;
               var ref = new Firebase(FBURL);
               var sync = $firebase(ref);
@@ -30,6 +30,23 @@ angular.module('recipeBox')
                             directions: submission.directions,
                             tags: tags,
                             image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + fileName})
+                              .then(function(ref) {
+                              $location.path('/your-recipes');
+              })
+            },
+
+            viewCategory : function (category) {
+              $rootScope.uid = localStorage.getItem('uid');
+              var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid +"/"+ category;
+
+
+              console.log("url",FBURL);
+              var ref = new Firebase(FBURL);
+              var sync = $firebase(ref);
+              var view_deets = sync.$asArray();
+
+              return view_deets;
+
             }
 
            }
