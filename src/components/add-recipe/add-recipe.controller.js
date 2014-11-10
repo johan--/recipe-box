@@ -1,16 +1,7 @@
 'use strict';
 
 
-recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin', '$location', '$upload', 'firebaseService', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $upload, firebaseService) {
-
-////Firebase stuff ////
-$rootScope.uid = localStorage.getItem('uid');
-
-var userFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/recipes/';
-
-var ref = new Firebase(userFBURL);
-var sync = $firebase(ref);
-$scope.fb_deets = sync.$asArray();
+recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope', '$location', '$upload', 'firebaseService', function($scope, $rootScope, $location, $upload, firebaseService) {
 
 
 var tags = [];
@@ -26,15 +17,12 @@ $scope.addRecipe = function(submission) {
     firebaseService.addToCategory(tags[i], submission, $scope.file.name);
     }
 
-  $scope.fb_deets.$add({title: submission.title,
-  ingredients: submission.ingredients,
-  directions: submission.directions,
-  tags: tags,
-  image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + $scope.file.name}).then(function(ref){
-        $location.path('/your-recipes');
+  firebaseService.addToRecipes(submission, tags, $scope.file.name);
+  //make this a promise
+        // .then(function(ref){
+        // $location.path('/your-recipes');
 
-  });
-}
+};
 
 //recipe categories
  $scope.categories = [{
@@ -74,10 +62,10 @@ $scope.addRecipe = function(submission) {
 
 
 
-$scope.onFileSelect = function($files) {
-  console.log("file?",$files);
-  $scope.file = $files[0];
-};
+  $scope.onFileSelect = function($files) {
+    console.log("file?",$files);
+    $scope.file = $files[0];
+  };
 
 
   $scope.upload = function() {
@@ -98,6 +86,7 @@ $scope.onFileSelect = function($files) {
       }).success(function(data, status, headers, config) {
         // file is uploaded successfully
         console.log(data);
+
       });
     };
 }]);
