@@ -33,6 +33,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
       console.log('user', user);
       $scope.signIn();
       ref2.child(user.uid).set('recipes');
+
     }, function(error) {
       console.log('error', error);
     });

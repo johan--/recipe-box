@@ -1,7 +1,7 @@
 'use strict';
 
 
-recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin', '$location', '$upload', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $upload) {
+recipeBox.controller('addRecipeCtrl', ['$scope', '$rootScope','$firebase', '$firebaseSimpleLogin', '$location', '$upload', 'firebaseService', function($scope, $rootScope, $firebase, $firebaseSimpleLogin, $location, $upload, firebaseService) {
 
 ////Firebase stuff ////
 $rootScope.uid = localStorage.getItem('uid');
@@ -12,23 +12,28 @@ var ref = new Firebase(userFBURL);
 var sync = $firebase(ref);
 $scope.fb_deets = sync.$asArray();
 
+
 var tags = [];
 
 $scope.addRecipe = function(submission) {
+
   for (var i = 0; i < $scope.categories.length; i++) {
     if ($scope.categories[i].state === true) {
       tags.push($scope.categories[i].name);
     }
   }
+  for(var i = 0; i < tags.length; i++){
+    firebaseService.addToCategory(tags[i], submission, $scope.file.name);
+    }
+
   $scope.fb_deets.$add({title: submission.title,
   ingredients: submission.ingredients,
   directions: submission.directions,
   tags: tags,
   image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + $scope.file.name}).then(function(ref){
         $location.path('/your-recipes');
-        console.log($location.path());
+
   });
-  $scope.fb_deets.$add()
 }
 
 //recipe categories
