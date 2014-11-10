@@ -23,12 +23,19 @@ angular.module('recipeBox')
 		var styled_ingredients = recipe.ingredients.split(',').join('<br>');
 		var styled_directions = recipe.directions.split('.').join('.<br>');
 		$splash.open({
+			id: recipe.$id,
 			image: recipe.image,
 			title: recipe.title,
 			ingredients: styled_ingredients,
 			directions: styled_directions
 
 		});
+
+		$scope.deleteRecipe = function(id) {
+			firebaseService.deleteRecipe(id);
+		}
+
+		console.log(recipe.$id);
 	};
 
 	$scope.tags = ["Breakfast",

@@ -49,7 +49,9 @@ angular.module('recipeBox')
 
             },
 
-            deleteRecipe : function()
+            deleteRecipe : function(id){
+              console.log(id);
+            }
 
            }
 
