@@ -30,8 +30,6 @@ $main-tan: #D6B397;
 }
 
 .logo {
-
-  padding-top: 25px;
   font-family: 'Cookie', cursive;
   font-size: 90px;
   text-align: center;
@@ -45,14 +43,13 @@ $main-tan: #D6B397;
 }
 
 .logo-wrapper {
-  margin: 0 auto;
-  margin-top: -20px;
   background-color: $main-tan;
-  width: 400px;
-  height: 150px;
+  width: 375px;
+  height: 140px;
   padding-bottom: 5px;
   border-bottom-left-radius: 15px;
   position: absolute;
+  top: 0;
   z-index: 200;
 
   }

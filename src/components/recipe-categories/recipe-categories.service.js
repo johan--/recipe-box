@@ -1,18 +1,10 @@
 angular.module('recipeBox')
-      .service('recipeCategoriesService', ['$firebase', function($firebase) {
-
-
-  // $scope.recipes = recipesArr;
-
+      .service('recipeCategoriesService', ['$firebase', '$location', function($firebase, $location) {
         return {
 
-          viewTag : function(tag) {
-          var uid = localStorage.getItem('uid');
-          var viewFBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + uid + '/recipes/';
+          viewTag : function(tag, recipesArr) {
 
-          var ref = new Firebase(viewFBURL);
-          var sync = $firebase(ref);
-          var recipesArr = sync.$asArray();
+
           var currentTag = [];
 
             for (var i = 0; i < recipesArr.length; i++) {
@@ -20,9 +12,14 @@ angular.module('recipeBox')
                 currentTag.push(recipesArr[i]);
               }
             }
-            console.log(recipesArr[0]);
-            return currentTag;
 
+            console.log('???', currentTag);
+
+            var urlTag = tag.toLowerCase().replace(/\s/g, "-");
+
+            $location.path('/' + tag);
+            console.log(urlTag)
+            return currentTag;
 
           }
 

@@ -40,20 +40,25 @@ angular.module('recipeBox')
         "Vegetarian",
         "Drink"];
 
-$scope.viewCategory = function(tag){
-		var currentTag = [];
+$scope.viewCategory = function(tag, recipesArr){
+	debugger;
+		var currentTag = recipeCategoriesService.viewTag(tag, recipesArr);
+		 console.log(currentTag);
+	}
 
-            for (var i = 0; i < recipesArr.length; i++) {
-              if (recipesArr[i].tags.indexOf(tag) != -1) {
-                currentTag.push(recipesArr[i]);
-              }
-            }
+//             for (var i = 0; i < recipesArr.length; i++) {
+//               if (recipesArr[i].tags.indexOf(tag) != -1) {
+//                 currentTag.push(recipesArr[i]);
+//               }
+//             }
 
-            console.log('???', currentTag);
+//             console.log('???', currentTag);
 
-            location.path('/' + tag)
+//             var urlTag = tag.replace(/\s/g, "g");
 
-}
+//             $location.path('/' + tag);
+
+// }
 }]);
 
 
