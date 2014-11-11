@@ -30,13 +30,8 @@ angular.module('recipeBox')
 			directions: styled_directions
 
 		});
+};
 
-		$scope.deleteRecipe = function(id) {
-			firebaseService.deleteRecipe(id);
-		}
-
-		console.log(recipe.$id);
-	};
 
 	$scope.tags = ["Breakfast",
        	"Easy lunch",

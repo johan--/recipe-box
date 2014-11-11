@@ -53,7 +53,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'</section>'
 			);
 		$templateCache.put('view-recipe/content.html',
-			'<div class="splash-content text-center">' +
+			'<div class="splash-content text-center" ng-controller="viewRecipeCtrl">' +
 			'<h2 ng-bind="title"></h2>' +
 			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
 			'<div class="row">' +
