@@ -17,7 +17,7 @@ $scope.addRecipe = function(submission) {
   firebaseService.addToRecipes(submission, tags, $scope.file.name).then(function(ref){
     var id = ref.name();
       for(var i = 0; i < tags.length; i++){
-        firebaseService.addToCategory(tags[i], submission, $scope.file.name, id);
+        firebaseService.addToCategory(tags[i], tags, submission, $scope.file.name, id);
         }
         $location.path('/your-recipes');
   });

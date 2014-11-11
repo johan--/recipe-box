@@ -5,8 +5,7 @@ angular.module('recipeBox')
 
     $scope.deleteRecipe = function(recipe) {
       firebaseService.deleteRecipe(recipe);
-      console.log(recipe);
-    }
+     }
 
 
 

@@ -3,7 +3,7 @@ angular.module('recipeBox')
 
         return {
 
-           addToCategory : function(category, submission, fileName, id){
+           addToCategory : function(category, tags, submission, fileName, id){
 
               $rootScope.uid = localStorage.getItem('uid');
               var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid +"/"+ category;
@@ -15,6 +15,7 @@ angular.module('recipeBox')
                             ingredients: submission.ingredients,
                             directions: submission.directions,
                             root_id : id,
+                            tags: tags,
                             image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + fileName
                           });
 
@@ -53,11 +54,12 @@ angular.module('recipeBox')
                 $rootScope.uid = localStorage.getItem('uid');
                 var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/' + category;
                 var ref = new Firebase(FBURL);
-                var sync = $firebase(ref);
-                sync.startAt(root_id)
-                   .endAt(root_id)
-                   .once('value', function(dataSnapshot){
-                    dataSnapshot.parent().$remove();
+          /searching for tag and deleting reference /
+                ref.equalTo(root_id)
+                   .on('value', function(snap){
+                    snap.ref().remove();
+              },function(){
+                console.log('error');
               });
           },
 
@@ -73,7 +75,10 @@ angular.module('recipeBox')
             deleteRecipe : function(recipe){
 
               if(recipe.root_id){
-                this.deleteRecipeCategory(recipe.root_id);
+
+                for (var i = 0; i < recipe.tags.length; i++) {
+                  this.deleteRecipeCategory(recipe.tags[i], recipe.root_id);
+                }
 
               } else {
 
