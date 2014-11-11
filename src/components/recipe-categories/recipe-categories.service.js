@@ -6,7 +6,7 @@ angular.module('recipeBox')
 
            var urlTag = tag.toLowerCase().replace(/\s/g, "-");
            $location.path('/your-recipes/' + urlTag);
-         },
+         }
 
           // viewTagRecipes : function(tag, recipesArr) {
 
@@ -24,6 +24,7 @@ angular.module('recipeBox')
 
           // }
 
-        }
 
-        }]);
+      };
+
+    }]);

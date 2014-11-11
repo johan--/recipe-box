@@ -5,8 +5,8 @@
 angular.module('recipeBox')
 	.service('$splash', ['$modal', '$rootScope', function($modal, $rootScope) {
 			return {
+
 				open: function(attrs, opts) {
-					console.log("open???");
 					var scope = $rootScope.$new();
 					angular.extend(scope, attrs);
 					opts = angular.extend(opts || {}, {
@@ -14,6 +14,7 @@ angular.module('recipeBox')
 						scope: scope,
 						templateUrl: 'view-recipe/content.html',
 						windowTemplateUrl: 'view-recipe/index.html'
+
 					});
 					return $modal.open(opts);
 				}

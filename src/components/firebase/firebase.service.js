@@ -1,8 +1,9 @@
 angular.module('recipeBox')
       .service('firebaseService', ['$firebase', '$rootScope', '$location', function($firebase, $rootScope, $location) {
+
         return {
 
-           addToCategory : function(category, submission, fileName){
+           addToCategory : function(category, submission, fileName, id){
 
               $rootScope.uid = localStorage.getItem('uid');
               var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid +"/"+ category;
@@ -13,6 +14,7 @@ angular.module('recipeBox')
             cat_deets.$add({title: submission.title,
                             ingredients: submission.ingredients,
                             directions: submission.directions,
+                            root_id : id,
                             image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + fileName
                           });
 
@@ -25,14 +27,12 @@ angular.module('recipeBox')
               var sync2 = $firebase(addRef);
               var fb_deets = sync2.$asArray();
 
-              fb_deets.$add({title: submission.title,
+              return fb_deets.$add({title: submission.title,
                             ingredients: submission.ingredients,
                             directions: submission.directions,
                             tags: tags,
-                            image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + fileName})
-                              .then(function(ref) {
-                              $location.path('/your-recipes');
-              })
+                            image: "https://s3-us-west-2.amazonaws.com/recipe-box/" + fileName});
+
             },
 
             viewCategory : function (category) {
@@ -50,11 +50,8 @@ angular.module('recipeBox')
             },
 
             deleteRecipe : function(id){
-              console.log(id);
+              console.log(':(');
             }
+        };
+  }]);
 
-           }
-
-
-
-        }]);
