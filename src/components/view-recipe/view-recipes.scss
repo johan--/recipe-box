@@ -2,7 +2,7 @@
 
 .splash {
     position: fixed;
-    background: RGBA(226, 201, 181, 1);
+    background: RGBA(226, 201, 181, 0.85);
     width: 100%;
     height: 100%;
     top: 0;
@@ -57,12 +57,12 @@
 	border-radius: 0px;
 }
 
-.delete {
+.delete, .favorite, .share, .edit {
 	border: none;
 	overflow: hidden;
 	border: none;
-	background: RGBA(226, 201, 181, 1);
-
+	background: RGBA(245, 245, 245, 1);
+    font-size: 20px;
 	outline: none;
 	z-index: 100;
 }
@@ -77,7 +77,7 @@
 	top: 20px;
 	overflow: hidden;
 	border: none;
-	background: RGBA(226, 201, 181, 1);
+	background: RGBA(245, 245, 245, 1);
     font-size: 30px;
 	outline: none;
 	z-index: 100;

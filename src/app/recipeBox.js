@@ -54,6 +54,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			);
 		$templateCache.put('view-recipe/content.html',
 			'<div class="splash-content text-center" ng-controller="viewRecipeCtrl">' +
+			'<div class="well well-lg">' +
 			'<h2 ng-bind="title"></h2>' +
 			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
 			'<div class="row">' +
@@ -64,8 +65,14 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'<p class="lead directions" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
+			'<div class="settings-buttons">' +
 			'<button class="delete" ng-click="deleteRecipe(id)"><span class="glyphicon glyphicon-trash"></span></button>' +
+			'<button class="edit"><span class="glyphicon glyphicon-edit"></span></button>' +
+			'<button class="favorite"><span class="glyphicon glyphicon-heart-empty"></span></button>' +
+			'<button class="share"><span class="glyphicon glyphicon-envelope"></span></button>' +
+			'</div>' +
 			'<button class="splash-close" ng-click="$close()"><span class="glyphicon glyphicon-remove"></span></button>' +
+			'</div>' +
 			'</div>'
 			);
 
