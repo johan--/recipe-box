@@ -29,7 +29,7 @@ angular.module('recipeBox')
     }
 
   $scope.tags = ["breakfast",
-  "easy lunch",
+  "easy-lunch",
   "entree",
   "snack",
   "dessert",

@@ -30,7 +30,7 @@ $scope.addRecipe = function(submission) {
         name: "breakfast",
         state: false
     }, {
-        name: "easy lunch",
+        name: "easy-lunch",
         state: false
     }, {
         name: "entree",
