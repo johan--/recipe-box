@@ -49,9 +49,39 @@ angular.module('recipeBox')
 
             },
 
-            deleteRecipe : function(id){
-              console.log(':(');
+            deleteRecipeCategory: function(category,root_id){
+                $rootScope.uid = localStorage.getItem('uid');
+                var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/' + category;
+                var ref = new Firebase(FBURL);
+                var sync = $firebase(ref);
+                sync.startAt(root_id)
+                   .endAt(root_id)
+                   .once('value', function(dataSnapshot){
+                    dataSnapshot.parent().$remove();
+              });
+          },
+
+            deleteRecipeOrigin : function(id) {
+                $rootScope.uid = localStorage.getItem('uid');
+                var FBURL = 'https://glowing-inferno-7484.firebaseIO.com/profiles/' + $rootScope.uid + '/' + 'recipes' + '/' + id;
+                var ref = new Firebase(FBURL);
+                var sync = $firebase(ref);
+                sync.$remove();
+
+            },
+
+            deleteRecipe : function(recipe){
+
+              if(recipe.root_id){
+                this.deleteRecipeCategory(recipe.root_id);
+
+              } else {
+
+                 this.deleteRecipeOrigin(recipe.$id);
+
+              }
             }
-        };
+
+        }
   }]);
 

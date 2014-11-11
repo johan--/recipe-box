@@ -3,9 +3,9 @@ angular.module('recipeBox')
     ['$scope', '$rootScope', 'recipeCategoriesService', 'firebaseService', '$location',
     function($scope, $rootScope, recipeCategoriesService, firebaseService, $location) {
 
-    $scope.deleteRecipe = function(id) {
-      firebaseService.deleteRecipe(id);
-      console.log(id);
+    $scope.deleteRecipe = function(recipe) {
+      firebaseService.deleteRecipe(recipe);
+      console.log(recipe);
     }
 
 

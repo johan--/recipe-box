@@ -66,7 +66,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'</div>' +
 			'</div>' +
 			'<div class="settings-buttons">' +
-			'<button class="delete" ng-click="deleteRecipe(id)"><span class="glyphicon glyphicon-trash"></span></button>' +
+			'<button class="delete" ng-click="deleteRecipe(recipe)"><span class="glyphicon glyphicon-trash"></span></button>' +
 			'<button class="edit"><span class="glyphicon glyphicon-edit"></span></button>' +
 			'<button class="favorite"><span class="glyphicon glyphicon-heart-empty"></span></button>' +
 			'<button class="share"><span class="glyphicon glyphicon-envelope"></span></button>' +
