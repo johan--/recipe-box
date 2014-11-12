@@ -5,7 +5,7 @@
     "modernizr": "2.8.x",
     "angular": "1.2.x",
     "bootstrap-sass-official": "3.2.x",
-    "firebase": "~2.0.3",
+    "firebase": "1.0.24",
     "angularfire": "0.8.2",
     "ng-file-upload": "1.6.12",
     "ng-file-upload-shim": "1.6.12"
