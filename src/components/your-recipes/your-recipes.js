@@ -34,7 +34,7 @@ angular.module('recipeBox')
 
 
 	$scope.tags = ["Breakfast",
-       	"Easy-lunch",
+       	"Easy lunch",
         "Entree",
         "Snack",
         "Dessert",
@@ -43,6 +43,7 @@ angular.module('recipeBox')
         "Drink"];
 
 $scope.viewCategory = function(tag){
+		var tag = tag.replace(/\s/g, "-");
 		recipeCategoriesService.viewTag(tag);
 	}
 

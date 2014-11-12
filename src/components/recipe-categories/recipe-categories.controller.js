@@ -25,11 +25,12 @@ angular.module('recipeBox')
   };
 
   $scope.viewCategory = function(tag){
+      var tag = tag.replace(/\s/g, "-");
      recipeCategoriesService.viewTag(tag);
     }
 
   $scope.tags = ["breakfast",
-  "easy-lunch",
+  "easy lunch",
   "entree",
   "snack",
   "dessert",

@@ -80,7 +80,9 @@ body {
 
 .form-title {
   padding: 10px;
+  text-align: center;
 }
+
 
 #email, #password {
   margin-top: 20px;
@@ -111,6 +113,7 @@ input.ng-dirty.ng-invalid {
   margin: 1px;
   background-color: rgba(199, 149, 109, 0.9);
   border: 1px solid #fff;
+  text-transform: capitalize;
 
 }
 
@@ -129,4 +132,11 @@ button.on {
   padding: 40px;
   clear: both;
   // position: absolute;
+}
+
+.well-lg {
+    border-radius-bottom-left: 7px;
+    border-radius-top-left: 7px;
+    border-radius-bottom-right: 0;
+    border-radius-bottom-left: 0;
 }

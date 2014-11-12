@@ -10,7 +10,8 @@ $scope.addRecipe = function(submission) {
 
   for (var i = 0; i < $scope.categories.length; i++) {
     if ($scope.categories[i].state === true) {
-      tags.push($scope.categories[i].name);
+      var formatted_tag = $scope.categories[i].name.replace(/\s/g, "-");
+      tags.push(formatted_tag);
     }
   }
 
@@ -30,7 +31,7 @@ $scope.addRecipe = function(submission) {
         name: "breakfast",
         state: false
     }, {
-        name: "easy-lunch",
+        name: "easy lunch",
         state: false
     }, {
         name: "entree",
