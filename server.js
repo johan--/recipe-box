@@ -7,9 +7,10 @@ var _ = require('underscore');
 var path = require('path');
 var fs = require('fs');
 
+var staticFolder = process.env.NODE_ENV == "production" ? "dist" : "src";
 
-app.use(express.static(__dirname + "/src"));
-app.use(harp.mount(__dirname + "/src"));
+app.use(express.static(__dirname + "/" + staticFolder));
+app.use(harp.mount(__dirname + "/" + staticFolder));
 
 
 var port = process.env.PORT || 3000;
