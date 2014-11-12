@@ -2,7 +2,10 @@
   "name": "recipeBox",
   "version": "0.0.0",
   "dependencies": {
+    "aws-sdk": "^2.0.26",
+    "connect-multiparty": "^1.2.5",
     "express": "^4.9.8",
+    "harp": "^0.14.0",
     "query-string": "^1.0.0",
     "request": "^2.45.0",
     "underscore": "^1.7.0"
