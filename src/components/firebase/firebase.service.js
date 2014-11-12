@@ -72,7 +72,7 @@ angular.module('recipeBox')
             },
 
             deleteRecipe : function(recipe){
-              if(confirm("Are you sure you'd like to delete this recipe")) {
+              if(confirm("Are you sure you'd like to delete this recipe?")) {
               if(recipe.root_id){
                 for (var i = 0; i < recipe.tags.length; i++) {
                   this.deleteRecipeCategory(recipe.tags[i], recipe.root_id);

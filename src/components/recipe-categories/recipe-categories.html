@@ -1,20 +1,20 @@
 <div class="container-fluid" >
 <div class="row">
-<div class="col-lg-8 col-lg-offset-2">
-<div ng-repeat="tag in tags" ng-click="viewCategory(tag)" class="tag-links"> {{tag}}</div>
+<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+<div ng-repeat="tag in tags" ng-click="viewCategory(tag)" class="tag-links">{{tag}}</div>
 </div>
 </div>
     <div class="wrap">
     <div class="row">
       <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="c in currentTagRecipes">
         <div ng-click="openRecipe(c)" class="recipe-holder">
-          <img class="image-responsive" src="{{c.image}}" style="width: 300px; height: 300px;" />
+          <img class="thumbs image-responsive" src="{{c.image}}" style="width: 300px; height: 300px;" />
           <div class="recipe-caption">
             <h4 class="c-title">{{c.title | uppercase }} </h4>
           </div><!--end of caption -->
         </div><!--end of recipe holder -->
       </div> <!--end of column -->
-          <div ng-show="!currentTagRecipes.length"class="no-recipe">You don't have any {{currentTag}} recipes. <a ng-href="#/new">Add one!</a></div>
+          <div ng-show="!currentTagRecipes.length"class="no-recipe"><h3 class="text-center"><strong>You don't have any {{currentTag}} recipes. <a ng-href="#/new">Add one!</a></h3></strong></div>
 
     </div><!--end of row -->
 

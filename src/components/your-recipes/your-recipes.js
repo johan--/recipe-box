@@ -2,8 +2,8 @@
 
 angular.module('recipeBox')
 	.controller('yourRecipesCtrl',
-		['$scope', '$rootScope', 'SplitArrayService', '$firebase', '$splash', 'recipeCategoriesService',
-		function($scope, $rootScope, SplitArrayService, $firebase, $splash, recipeCategoriesService) {
+		['$scope', '$rootScope', '$firebase', '$splash', 'recipeCategoriesService',
+		function($scope, $rootScope, $firebase, $splash, recipeCategoriesService) {
 
 	var uid = localStorage.getItem('uid');
 
@@ -14,8 +14,8 @@ angular.module('recipeBox')
 	var recipesArr = sync.$asArray();
 	$scope.recipes = recipesArr;
 
-	$scope.recipeRows = SplitArrayService.SplitArray($scope.recipes, 2);
-	console.log($scope.recipeRows);
+	// $scope.recipeRows = SplitArrayService.SplitArray($scope.recipes, 2);
+	// console.log($scope.recipeRows);
 
 
 
@@ -52,37 +52,37 @@ $scope.viewCategory = function(tag){
 
 
 
-recipeBox.service('SplitArrayService', function () {
-	return {
-		SplitArray: function (array, columns) {
-			if (array.length <= columns) {
-				return [array];
-			};
+// recipeBox.service('SplitArrayService', function () {
+// 	return {
+// 		SplitArray: function (array, columns) {
+// 			if (array.length <= columns) {
+// 				return [array];
+// 			};
 
-			var rowsNum = Math.ceil(array.length / columns);
+// 			var rowsNum = Math.ceil(array.length / columns);
 
-			var rowsArray = new Array(rowsNum);
+// 			var rowsArray = new Array(rowsNum);
 
-			for (var i = 0; i < rowsNum; i++) {
-				var columnsArray = new Array(columns);
-				for (var j = 0; j < columns; j++) {
-					var index = i * columns + j;
+// 			for (var i = 0; i < rowsNum; i++) {
+// 				var columnsArray = new Array(columns);
+// 				for (var j = 0; j < columns; j++) {
+// 					var index = i * columns + j;
 
-					if (index < array.length) {
-						columnsArray[j] = array[index];
-					} else {
-						break;
-					}
-				}
-				rowsArray[i] = columnsArray;
-			}
-			return rowsArray;
-			console.log(rowsArray);
-		}
+// 					if (index < array.length) {
+// 						columnsArray[j] = array[index];
+// 					} else {
+// 						break;
+// 					}
+// 				}
+// 				rowsArray[i] = columnsArray;
+// 			}
+// 			return rowsArray;
+// 			console.log(rowsArray);
+// 		}
 
-}
+// }
 
-	});
+// 	});
 
 
 

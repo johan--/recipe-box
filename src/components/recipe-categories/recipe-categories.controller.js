@@ -2,11 +2,11 @@
 
 angular.module('recipeBox')
   .controller('recipeCategoriesCtrl',
-    ['$scope', '$rootScope', '$splash', 'recipeCategoriesService', 'firebaseService', '$location', 'SplitArrayService',
-    function($scope, $rootScope, $splash, recipeCategoriesService, firebaseService, $location, SplitArrayService) {
+    ['$scope', '$rootScope', '$splash', 'recipeCategoriesService', 'firebaseService', '$location',
+    function($scope, $rootScope, $splash, recipeCategoriesService, firebaseService, $location) {
 
 
-    $scope.currentTag = $location.path().slice(14);
+    $scope.currentTag = $location.path().slice(14).replace("-", " ");
     $scope.currentTagRecipes = firebaseService.viewCategory($scope.currentTag);
 
 

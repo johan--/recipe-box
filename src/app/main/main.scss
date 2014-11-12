@@ -62,7 +62,7 @@ body {
 
 .logo-small {
   font-family: 'Cookie', cursive;
-  font-size: 50px;
+  font-size: 55px;
   color: $main-tan;
    text-shadow:
        2px 2px 0 white,
@@ -134,9 +134,18 @@ button.on {
   // position: absolute;
 }
 
-.well-lg {
-    border-radius-bottom-left: 7px;
-    border-radius-top-left: 7px;
-    border-radius-bottom-right: 0;
-    border-radius-bottom-left: 0;
+.rec-well {
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
+
+.source {
+  text-align: right;
+  a {
+  color: #000;
+  text-decoration: none;
+}
+}
+
