@@ -1,7 +1,7 @@
 <div class="container-fluid" >
 <div class="row">
 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-<div ng-repeat="tag in tags" ng-click="viewCategory(tag)" class="tag-links">{{tag}}</div>
+<div ng-repeat="tag in tags" ng-class="{sel: $index == selected}" ng-click="viewCategory(tag)" class="tag-links">{{tag}}</div>
 </div>
 </div>
     <div class="wrap">

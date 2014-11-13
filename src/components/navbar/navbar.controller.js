@@ -5,10 +5,8 @@ angular.module('recipeBox')
     $scope.goRecipe = function(route){
     	$location.path("/" + route);
 
-    // $scope.yourRecipes = function() {
-    //   if ($location.path() === '/yourRecipes') {
-    //     return true;
-    //   }
-    // }
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
     }
   }]);

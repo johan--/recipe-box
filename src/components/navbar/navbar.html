@@ -15,9 +15,9 @@
 
   <ul class="nav navbar-nav navbar-right">
 
-	  <li><a ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a></li>
+	  <li><a ng-class="{active : isActive('/your-recipes')}" ng-click="goRecipe('your-recipes')"><h4>Your recipes</h4></a></li>
 
-		<li><a ng-click="goRecipe('new')"><h4>Add recipe</h4></a>
+		<li><a ng-class="{active : isActive('/new')}" ng-click="goRecipe('new')"><h4>Add recipe</h4></a>
 		</li>
 
 	  <li ng-show="user" ng-controller="AuthCtrl">

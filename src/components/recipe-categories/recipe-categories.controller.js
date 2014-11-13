@@ -11,6 +11,12 @@ angular.module('recipeBox')
 
 
 
+    // $scope.select = function(index) {
+    //   debugger;
+    //   $scope.selected = 0;
+    //   $scope.selected = index;
+    // };
+
    $scope.openRecipe = function(recipe) {
       var styled_ingredients = recipe.ingredients.split(',').join('<br>');
       var styled_directions = recipe.directions.split('.').join('.<br>');
