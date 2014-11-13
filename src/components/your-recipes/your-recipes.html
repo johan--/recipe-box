@@ -6,7 +6,7 @@
 </div>
 	<div class="wrap">
 		<div class="row">
-			<div class=" col-sm-6 col-md-4 col-lg-3" ng-repeat="r in recipes">
+			<div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="r in recipes">
 				<div ng-click="openRecipe(r)" class="recipe-holder">
 					<img class="thumbs image-responsive" src="{{r.image}}" style="width: 300px; height: 300px;" />
 					<div class="recipe-caption">
@@ -16,10 +16,15 @@
 			</div> <!--end of column -->
 		</div><!--end of row -->
 		<!-- welcome/add recipes -->
-	<div ng-show="!recipes.length" class="no-recipes" >
-	<a ng-href="/#/new"><div class="no-recipe-stripe"><h2 class="no-recipe-welcome">Welcome!</h2> <h2 class="no-recipe-note">Add your first recipe!</h2></div>
-	<img class="no-recipe-img" src="./../assets/brownies-background.jpg" width="500px" /></a>
-	</div>
+		<div ng-show="recipesLoaded && recipes.length == 0" class="no-recipes" >
+			<a ng-href="/#/new">
+				<div class="no-recipe-stripe">
+					<h2 class="no-recipe-welcome">Welcome!</h2>
+					<h2 class="no-recipe-note">Add your first recipe!</h2>
+				</div>
+				<img class="no-recipe-img" src="./../assets/brownies-background.jpg" width="500px" />
+			</a>
+		</div>
 
 	</div><!--end of wrap -->
 </div> <!--end of container -->

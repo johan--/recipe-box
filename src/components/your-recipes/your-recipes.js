@@ -12,6 +12,10 @@ angular.module('recipeBox')
 	var ref = new Firebase(viewFBURL);
 	var sync = $firebase(ref);
 	var recipesArr = sync.$asArray();
+  $scope.recipesLoaded = false;
+  recipesArr.$loaded().then(function() {
+    $scope.recipesLoaded = true;
+  });
 	$scope.recipes = recipesArr;
 
 	// $scope.recipeRows = SplitArrayService.SplitArray($scope.recipes, 2);
