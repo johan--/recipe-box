@@ -66,7 +66,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'</div>' +
 			'<div class="col-sm-9 directions">' +
       '<h4>DIRECTIONS</h4>' +
-			'<p class="lead directions" ng-bind-html="directions"></p>' +
+			'<p class="lead" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
 			'<div class="settings-buttons">' +
