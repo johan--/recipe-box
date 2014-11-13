@@ -89,12 +89,16 @@ $main-tan: #D6B397;
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 255px;
-    height: 70px;
+    top: 235px;
+    height: 90px;
     width: 300px;
+    padding: 2px;
     background: RGBA(163, 160, 169, 0.8);
 }
 
+.view-title-holder:hover {
+    opacity: 0;
+}
 
 
 .delete, .favorite, .share, .edit {

@@ -60,11 +60,11 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'</div>' +
 			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
 			'<div class="row">' +
-			'<div class="col-sm-3 ingredients">' +
+			'<div class="col-sm-5 ingredients">' +
       '<h4>INGREDIENTS</h4>' +
 			'<p class="lead" ng-bind-html="ingredients"></p>' +
 			'</div>' +
-			'<div class="col-sm-9 directions">' +
+			'<div class="col-sm-7 directions">' +
       '<h4>DIRECTIONS</h4>' +
 			'<p class="lead" ng-bind-html="directions"></p>' +
 			'</div>' +
