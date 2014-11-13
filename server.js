@@ -21,6 +21,10 @@ var server = app.listen(port);
 var AWS = require('aws-sdk');
 AWS.config.region = 'us-west-2';
 
+AWS.config.getCredentials(function(err) {
+  if (err) console.log(err.stack); // credentials not loaded
+  else console.log("Access Key:", AWS.config.credentials);
+})
 
 // var URL = require('url');
 // var request = require('request');
