@@ -1,4 +1,6 @@
 /* Overlay style */
+$main-green: #99B898;
+$main-tan: #D6B397;
 
 .splash {
     position: fixed;
@@ -55,8 +57,42 @@
 
 .view-recipe-pic {
 	border-radius: 0px;
+
 }
 
+.view-recipe-pic:hover {
+    opacity: 1.0;
+
+}
+
+
+.view-title {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    font-size: 16;
+    // text-shadow:
+    //    2px 2px 0 white,
+    //  -1px -1px 0 white,
+    //   1px -1px 0 white,
+    //   -1px 1px 0 white,
+    //    1px 1px 0 white;
+}
+
+.view-title-holder {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 255px;
+    height: 70px;
+    width: 300px;
+    background: RGBA(163, 160, 169, 0.8);
+}
 
 
 
@@ -68,6 +104,7 @@
     font-size: 20px;
 	outline: none;
 	z-index: 100;
+    color: RGBA(163, 160, 169, 1);
 }
 
 
@@ -84,8 +121,15 @@
     font-size: 30px;
 	outline: none;
 	z-index: 100;
+    color: RGBA(163, 160, 169, 1);
 }
 
-
+.ingredients, .directions {
+    padding-top: 10px;
+    p {
+        font-size: 14px;
+        text-align: left;
+    }
+}
 
 

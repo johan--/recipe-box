@@ -55,13 +55,17 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 		$templateCache.put('view-recipe/content.html',
 			'<div class="splash-content text-center" ng-controller="viewRecipeCtrl">' +
 			'<div class="rec-well well well-lg">' +
-			'<h2 class="view-title" ng-bind="title"></h2>' +
+			'<div class="view-title-holder">' +
+			'<h3 class="view-title" ng-bind="title"></h3>' +
+			'</div>' +
 			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
 			'<div class="row">' +
-			'<div class="col-lg-offset-3 col-lg-6">' +
-      '<h4><strong>INGREDIENTS</strong></h4>' +
+			'<div class="col-sm-3 ingredients">' +
+      '<h4>INGREDIENTS</h4>' +
 			'<p class="lead" ng-bind-html="ingredients"></p>' +
-      '<h4><strong>DIRECTIONS</strong></h4>' +
+			'</div>' +
+			'<div class="col-sm-9 directions">' +
+      '<h4>DIRECTIONS</h4>' +
 			'<p class="lead directions" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
