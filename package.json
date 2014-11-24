@@ -4,6 +4,7 @@
   "dependencies": {
     "archy": "^1.0.0",
     "aws-sdk": "^2.0.26",
+    "browser-sync": "^1.6.5",
     "chalk": "^0.4.0",
     "connect-multiparty": "^1.2.5",
     "deprecated": "0.0.1",
