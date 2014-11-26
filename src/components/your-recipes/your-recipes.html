@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-sm-9 col-md-5 col-lg-3 col-xl-3" ng-repeat="r in recipes">
 				<div ng-click="openRecipe(r)" class="recipe-holder">
-					<img class="thumbs image-responsive" src="{{r.image}}" style="width: 300px; height: 300px;" />
+					<img class="thumbs image-responsive" ng-src="{{r.image}}" style="width: 300px; height: 300px;" />
 					<div class="recipe-caption">
 						<h4 class="r-title">{{r.title | uppercase }} </h4>
 					</div><!--end of caption -->
