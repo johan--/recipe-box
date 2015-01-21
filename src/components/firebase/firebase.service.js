@@ -73,21 +73,24 @@ angular.module('recipeBox')
 
             deleteRecipe : function(recipe){
               if(confirm("Are you sure you'd like to delete this recipe?")) {
-              if(recipe.root_id){
-                for (var i = 0; i < recipe.tags.length; i++) {
-                  this.deleteRecipeCategory(recipe.tags[i], recipe.root_id);
-                  this.deleteRecipeOrigin(recipe.root_id);
+                if(recipe.root_id){
+                  for (var i = 0; i < recipe.tags.length; i++) {
+                    this.deleteRecipeCategory(recipe.tags[i], recipe.root_id);
+                    this.deleteRecipeOrigin(recipe.root_id);
+                  }
+                } else {
+                   this.deleteRecipeOrigin(recipe.$id);
+                   for (var i = 0; i < recipe.tags.length; i++) {
+                   this.deleteRecipeCategory(recipe.tags[i], recipe.$id);
+                   $location.path('/your-recipes')
+                 }
                 }
-
-              } else {
-                 this.deleteRecipeOrigin(recipe.$id);
-                 for (var i = 0; i < recipe.tags.length; i++) {
-                 this.deleteRecipeCategory(recipe.tags[i], recipe.$id);
-                 $location.path('/your-recipes')
-               }
-              }
               }
             }
+
+            // editRecipe : function(recipe) {
+
+            // }
 
         }
   }]);

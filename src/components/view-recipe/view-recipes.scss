@@ -145,3 +145,7 @@ $main-tan: #D6B397;
 .directions p {
     text-align: justify;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}

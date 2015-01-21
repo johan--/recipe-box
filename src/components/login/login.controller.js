@@ -17,7 +17,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
       email: $scope.email,
       password: $scope.password
     }).then(function(user) {
-      console.log('user', user);
+      // console.log('user', user);
               localStorage.setItem('uid', user.uid);
               $location.path('/your-recipes');
     }, function(error) {
