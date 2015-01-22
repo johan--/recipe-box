@@ -63,10 +63,10 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'<div class="col-sm-5 ingredients">' +
       '<h4>INGREDIENTS</h4>' +
 			'<p class="lead" ng-bind-html="ingredients" ng-hide="editing"></p>' +
-			'<form ng-show="editing" ng-submit="editing = false">'+
-			'<textarea ng-model="recipe.ingredients" placeholder="Ingredients" ng-required></textarea>' +
-			'<button class="btn" type="submit">Save</button>' +
-      '</form>' +
+			// '<form ng-show="editing" ng-submit="editing = false">'+
+			// '<textarea ng-model="recipe.ingredients" placeholder="Ingredients" ng-required></textarea>' +
+			// '<button class="btn" type="submit">Save</button>' +
+   //    '</form>' +
 			'</div>' +
 			'<div class="col-sm-7 directions">' +
       '<h4>DIRECTIONS</h4>' +
