@@ -41,7 +41,7 @@ angular.module('recipeBox').controller('AuthCtrl', function($scope, $rootScope, 
 
   $scope.signOut = function() {
     localStorage.removeItem('uid');
-    console.log("user 1", auth.user);
+    // console.log("user 1", auth.user);
     auth.$logout(function(){
     });
 

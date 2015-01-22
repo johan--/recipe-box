@@ -65,7 +65,7 @@ $scope.addRecipe = function(submission) {
 
 
   $scope.onFileSelect = function($files) {
-    console.log("file?",$files);
+    // console.log("file?",$files);
     $scope.file = $files[0];
   };
 

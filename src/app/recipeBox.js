@@ -62,7 +62,11 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'<div class="row">' +
 			'<div class="col-sm-5 ingredients">' +
       '<h4>INGREDIENTS</h4>' +
-			'<p class="lead" ng-bind-html="ingredients"></p>' +
+			'<p class="lead" ng-bind-html="ingredients" ng-hide="editing"></p>' +
+			'<form ng-show="editing" ng-submit="editing = false">'+
+			'<textarea ng-model="recipe.ingredients" placeholder="Ingredients" ng-required></textarea>' +
+			'<button class="btn" type="submit">Save</button>' +
+      '</form>' +
 			'</div>' +
 			'<div class="col-sm-7 directions">' +
       '<h4>DIRECTIONS</h4>' +
@@ -71,7 +75,7 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'</div>' +
 			'<div class="settings-buttons">' +
 			'<button class="delete" ng-click="deleteRecipe(recipe); $close()"><span class="glyphicon glyphicon-trash"></span></button>' +
-			'<button class="edit"><span class="glyphicon glyphicon-edit"></span></button>' +
+			'<button class="edit" ng-click="editing = true"><span class="glyphicon glyphicon-edit"></span></button>' +
 			'<button class="favorite"><span class="glyphicon glyphicon-heart-empty"></span></button>' +
 			'<button class="share"><span class="glyphicon glyphicon-envelope"></span></button>' +
 			'</div>' +
