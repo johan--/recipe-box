@@ -146,6 +146,11 @@ $main-tan: #D6B397;
     text-align: justify;
 }
 
-[ng\:cloak], [ng-cloak], .ng-cloak {
-    display: none !important;
+
+.edit-field {
+    height: 260px;
 }
+
+// [ng\:cloak], [ng-cloak], .ng-cloak {
+//     display: none !important;
+// }
