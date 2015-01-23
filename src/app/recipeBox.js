@@ -59,21 +59,35 @@ recipeBox.config(['$routeProvider', function($routeProvider){
 			'<h3 class="view-title" ng-bind="title"></h3>' +
 			'</div>' +
 			'<img ng-src="{{image}}" class="view-recipe-pic" width="300px">' +
-			'<div class="row">' +
+			'<div class="row" ng-hide="editing">' +
 			'<div class="col-sm-5 ingredients">' +
       '<h4>INGREDIENTS</h4>' +
-			'<p class="lead" ng-bind-html="ingredients" ng-hide="editing"></p>' +
-			// '<form ng-show="editing" ng-submit="editing = false">'+
-			// '<textarea ng-model="recipe.ingredients" placeholder="Ingredients" ng-required></textarea>' +
-			// '<button class="btn" type="submit">Save</button>' +
-   //    '</form>' +
+			'<p class="lead" ng-bind-html="ingredients"></p>' +
+       //directions//
 			'</div>' +
 			'<div class="col-sm-7 directions">' +
       '<h4>DIRECTIONS</h4>' +
 			'<p class="lead" ng-bind-html="directions"></p>' +
 			'</div>' +
 			'</div>' +
-			'<div class="settings-buttons">' +
+			//edit form for ingredients//
+			'<div class="row" ng-show="editing">' +
+			'<div class="col-sm-5 ingredients">' +
+      '<h4>INGREDIENTS</h4>' +
+			'<form ng-show="editing" ng-submit="editing = false">'+
+			'<textarea ng-model="recipe.ingredients" placeholder="Ingredients" ng-required></textarea>' +
+			'</div>' + //end of ingredients//
+			'<div class="col-sm-7 directions">' +
+      '<h4>DIRECTIONS</h4>' +
+			'<textarea ng-model="recipe.directions" placeholder="Directions" ng-required></textarea>' +
+			'</div>' + //end of directions//
+			'<div class="row">' + //save button row//
+			'<button class="btn" ng-click="editing = false" type="submit">Save</button>' +
+      '</form>' +
+      '</div>' +
+       '</div>' +
+      //settings buttons//
+			'<div class="settings-buttons" ng-hide="editing">' +
 			'<button class="delete" ng-click="deleteRecipe(recipe); $close()"><span class="glyphicon glyphicon-trash"></span></button>' +
 			'<button class="edit" ng-click="editing = true"><span class="glyphicon glyphicon-edit"></span></button>' +
 			'<button class="favorite"><span class="glyphicon glyphicon-heart-empty"></span></button>' +
